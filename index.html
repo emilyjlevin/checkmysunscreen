@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Check My Sunscreen</title>
-  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Google tag -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4KMQKF2F5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-T4KMQKF2F5');
+  </script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+
+  <div class="search-container">
     <h1>Check My Sunscreen</h1>
-    <p>Paste your sunscreen ingredients below or search for a product name:</p>
-
-    <textarea id="ingredientInput" placeholder="e.g., Water, Glycerin, Benzophenone-4..."></textarea>
-    <button onclick="checkIngredients()">Check for Allergens</button>
-
-    <div id="results"></div>
+    <p>Start typing a brand name to find your sunscreen:</p>
+    <input type="text" id="brandSearch" placeholder="e.g., Neutrogena" />
   </div>
+
+  <div id="resultsGrid" class="grid-container"></div>
+
+  <hr style="margin: 50px 0;">
+
+  <div class="ingredient-checker">
+    <h2>Or paste your ingredients below:</h2>
+    <textarea id="ingredientInput" placeholder="e.g., homosalate, octocrylene, etc."></textarea>
+    <button id="checkButton">Check Ingredients</button>
+    <div id="output"></div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
