@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Check My Sunscreen</title>
-
+  <link rel="stylesheet" href="style.css" />
   <!-- Google tag -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVTV6BEB0X"></script>
   <script>
@@ -13,130 +13,31 @@
     gtag('js', new Date());
     gtag('config', 'G-TVTV6BEB0X');
   </script>
-
-  <style>
-    body {
-      font-family: "Helvetica Neue", sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fdfdfd;
-      color: #333;
-      text-align: center;
-    }
-
-    .search-container {
-      padding: 40px 20px 40px; /* top padding gives that roomy feel */
-      background-color: #e0f7f1;
-    }
-
-    .search-container h1 {
-      font-size: 48px; /* << change title size here */
-      margin-bottom: 20px;
-    }
-
-    .search-container p {
-      font-size: 18px;
-    }
-
-    .search-container input {
-      padding: 16px;
-      width: 90%;
-      max-width: 400px;
-      font-size: 18px;
-      border-radius: 10px;
-      border: 1px solid #bbb;
-    }
-
-    .grid-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 24px;
-      padding: 40px 10px;
-    }
-
-    .grid-container div {
-      width: 180px;
-      text-align: center;
-    }
-
-    .grid-container img {
-      width: 100%;
-      border-radius: 14px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .ingredient-checker {
-      padding: 40px 10px;
-    }
-
-    .ingredient-checker h3 {
-      font-size: 24px; /* << change 'paste ingredients' size here */
-      margin-bottom: 20px;
-    }
-
-    textarea {
-      width: 90%;
-      max-width: 600px;
-      height: 140px;
-      font-size: 16px;
-      padding: 14px;
-      border-radius: 10px;
-      border: 1px solid #ccc;
-    }
-
-    button {
-      margin-top: 80px;
-      padding: 60px 0px;
-      font-size: 18px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    #results {
-      margin-top: 30px;
-      max-width: 90%;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media screen and (max-width: 600px) {
-      .search-container h1 {
-        font-size: 36px;
-      }
-
-      .ingredient-checker h3 {
-        font-size: 20px;
-      }
-    }
-  </style>
 </head>
-
 <body>
+  <div class="tab-container">
+    <div class="tabs">
+      <button class="tab active" data-tab="checkmyingredients">checkmyingredients</button>
+      <button class="tab" data-tab="findmysunscreen">findmysunscreen</button>
+    </div>
 
-  <div class="search-container">
-    <h1>Check My Sunscreen</h1>
-    <p>Start typing a brand name to find your sunscreen:</p>
-    <input type="text" id="brandSearch" placeholder="e.g., Neutrogena" />
-  </div>
+    <div class="tab-content active" id="checkmyingredients">
+      <div class="top-panel">
+        <h1>Check My Sunscreen</h1>
+        <p>Start typing a brand name to find your sunscreen:</p>
+        <input type="text" placeholder="e.g., Neutrogena" />
+      </div>
 
-  <div id="resultsGrid" class="grid-container"></div>
+      <div class="bottom-panel">
+        <p><strong>Or paste your ingredients below:</strong></p>
+        <textarea placeholder="e.g., homosalate, octocrylene, etc."></textarea>
+        <button>Check Ingredients</button>
+      </div>
+    </div>
 
-  <hr style="margin: 50px 0;">
-
-  <div class="ingredient-checker">
-    <h3><strong>Or paste your ingredients below:</strong></h3>
-    <textarea id="ingredientInput" placeholder="e.g., homosalate, octocrylene, etc."></textarea>
-    <br>
-    <button id="checkButton">Check Ingredients</button>
-    <div id="results"></div>
+    <div class="tab-content" id="findmysunscreen">
+      <p>Coming soon!</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
