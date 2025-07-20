@@ -25,19 +25,24 @@
     }
 
     .search-container {
-      padding: 60px 20px 30px;
+      padding: 40px 16px 20px;
       background-color: #e0f7f1;
     }
 
     .search-container h1 {
-      font-size: 42px;
-      margin-bottom: 16px;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .search-container p {
+      font-size: 16px;
     }
 
     .search-container input {
-      padding: 16px;
-      width: 360px;
-      font-size: 18px;
+      padding: 12px;
+      width: 90%;
+      max-width: 360px;
+      font-size: 16px;
       border-radius: 10px;
       border: 1px solid #bbb;
     }
@@ -46,39 +51,40 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 24px;
-      padding: 40px;
+      gap: 20px;
+      padding: 30px 16px;
     }
 
     .grid-container div {
-      width: 180px;
+      width: 140px;
       text-align: center;
     }
 
     .grid-container img {
       width: 100%;
-      border-radius: 14px;
+      border-radius: 12px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
-    .ingredient-checker h2 {
-      font-size: 28px;
+    .ingredient-checker h3 {
+      font-size: 16px;
+      margin: 30px 0 10px;
     }
 
     textarea {
-      width: 85%;
-      height: 140px;
-      margin-top: 20px;
-      font-size: 16px;
-      padding: 14px;
+      width: 90%;
+      height: 120px;
+      font-size: 14px;
+      padding: 12px;
       border-radius: 10px;
       border: 1px solid #ccc;
+      resize: vertical;
     }
 
     button {
-      margin-top: 20px;
-      padding: 14px 24px;
-      font-size: 18px;
+      margin-top: 16px;
+      padding: 12px 20px;
+      font-size: 16px;
       background-color: #007BFF;
       color: white;
       border: none;
@@ -91,11 +97,25 @@
     }
 
     #results {
-      margin-top: 30px;
-      max-width: 85%;
+      margin-top: 24px;
+      max-width: 90%;
       text-align: center;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    @media (max-width: 500px) {
+      .search-container h1 {
+        font-size: 24px;
+      }
+
+      .ingredient-checker h3 {
+        font-size: 14px;
+      }
+
+      button {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
@@ -110,7 +130,7 @@
 
   <div id="resultsGrid" class="grid-container"></div>
 
-  <hr style="margin: 50px 0;">
+  <hr style="margin: 40px 0;">
 
   <div class="ingredient-checker">
     <h3>Or paste your ingredients below:</h3>
@@ -120,7 +140,6 @@
     <div id="results"></div>
   </div>
 
-  <!-- Link to your separate JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
