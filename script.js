@@ -109,7 +109,10 @@ const products = [
 // --- Brand search interaction ---
 document.getElementById('brandSearch').addEventListener('input', function () {
   const query = this.value.toLowerCase();
-  const filtered = products.filter(p => p.brand.includes(query));
+  //const filtered = products.filter(p => p.brand.includes(query));
+  const filtered = query
+  ? products.filter(p => p.brand.includes(query))
+  : products;
 
   const grid = document.getElementById('resultsGrid');
   grid.innerHTML = '';
