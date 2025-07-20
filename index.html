@@ -15,20 +15,31 @@
   </script>
 </head>
 <body>
-  <div class="container">
-    <div class="top-panel">
-      <h1>Check My Sunscreen</h1>
-      <p>Start typing a brand name to find your sunscreen:</p>
-      <input type="text" placeholder="e.g., Neutrogena" />
+  <div class="tab-container">
+    <div class="tabs">
+      <button class="tab active" data-tab="checkmyingredients">checkmyingredients</button>
+      <button class="tab" data-tab="findmysunscreen">findmysunscreen</button>
     </div>
 
-    <hr />
+    <div class="tab-content active" id="checkmyingredients">
+      <div class="top-panel">
+        <h1>Check My Sunscreen</h1>
+        <p>Start typing a brand name to find your sunscreen:</p>
+        <input type="text" placeholder="e.g., Neutrogena" />
+      </div>
 
-    <div class="bottom-panel">
-      <p><strong>Or paste your ingredients below:</strong></p>
-      <textarea placeholder="e.g., homosalate, octocrylene, etc."></textarea>
-      <button>Check Ingredients</button>
+      <div class="bottom-panel">
+        <p><strong>Or paste your ingredients below:</strong></p>
+        <textarea placeholder="e.g., homosalate, octocrylene, etc."></textarea>
+        <button>Check Ingredients</button>
+      </div>
+    </div>
+
+    <div class="tab-content" id="findmysunscreen">
+      <p>Coming soon!</p>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
