@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Check My Sunscreen</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Google tag -->
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVTV6BEB0X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,31 +12,159 @@
     gtag('js', new Date());
     gtag('config', 'G-TVTV6BEB0X');
   </script>
+
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      color: #333;
+      text-align: center;
+    }
+
+    .search-container {
+      padding: 40px 16px 20px;
+      background-color: #e0f7f1;
+    }
+
+    .search-container h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .search-container p {
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+
+    .search-container input {
+      padding: 12px;
+      width: 90%;
+      max-width: 360px;
+      font-size: 16px;
+      border-radius: 10px;
+      border: 1px solid #bbb;
+    }
+
+    .autocomplete-list {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      max-width: 360px;
+      margin: 0 auto;
+      padding: 0;
+      list-style: none;
+      position: relative;
+      z-index: 10;
+    }
+
+    .autocomplete-list li {
+      padding: 10px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .autocomplete-list li:hover {
+      background-color: #f0f0f0;
+    }
+
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 16px;
+    }
+
+    .grid-container div {
+      width: 140px;
+      text-align: center;
+    }
+
+    .grid-container img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .ingredient-checker h3 {
+      font-size: 16px;
+      margin: 30px 0 10px;
+    }
+
+    textarea {
+      width: 90%;
+      height: 120px;
+      font-size: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #results {
+      margin-top: 24px;
+      max-width: 90%;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 500px) {
+      .search-container h1 {
+        font-size: 24px;
+      }
+
+      .search-container p {
+        font-size: 14px;
+      }
+
+      .ingredient-checker h3 {
+        font-size: 13px;
+      }
+
+      button {
+        font-size: 15px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <div class="tab-container">
-    <div class="tabs">
-      <button class="tab active" data-tab="checkmyingredients">checkmyingredients</button>
-      <button class="tab" data-tab="findmysunscreen">findmysunscreen</button>
-    </div>
 
-    <div class="tab-content active" id="checkmyingredients">
-      <div class="top-panel">
-        <h1>Check My Sunscreen</h1>
-        <p>Start typing a brand name to find your sunscreen:</p>
-        <input type="text" placeholder="e.g., Neutrogena" />
-      </div>
+  <div class="search-container">
+    <h1>Check My Sunscreen</h1>
+    <p>Start typing a brand name to find your sunscreen:</p>
+    <input type="text" id="brandSearch" placeholder="e.g., Neutrogena" autocomplete="off" />
+    <ul id="autocomplete-list" class="autocomplete-list"></ul>
+  </div>
 
-      <div class="bottom-panel">
-        <p><strong>Or paste your ingredients below:</strong></p>
-        <textarea placeholder="e.g., homosalate, octocrylene, etc."></textarea>
-        <button>Check Ingredients</button>
-      </div>
-    </div>
+  <div id="resultsGrid" class="grid-container"></div>
 
-    <div class="tab-content" id="findmysunscreen">
-      <p>Coming soon!</p>
-    </div>
+  <hr style="margin: 40px 0;">
+
+  <div class="ingredient-checker">
+    <h3>Or paste your ingredients below:</h3>
+    <textarea id="ingredientInput" placeholder="e.g., homosalate, octocrylene, etc."></textarea>
+    <br>
+    <button id="checkButton">Check Ingredients</button>
+    <div id="results"></div>
   </div>
 
   <script src="script.js"></script>
