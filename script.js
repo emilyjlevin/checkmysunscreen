@@ -129,3 +129,9 @@ document.getElementById('brandSearch').addEventListener('input', function () {
     grid.appendChild(card);
   });
 });
+
+
+// Trigger initial load to show all products by default
+document.getElementById('brandSearch').dispatchEvent(new Event('input'));
+
+
