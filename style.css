@@ -1,101 +1,76 @@
-/* Reset and base styles */
 body {
+  font-family: "Helvetica Neue", sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background-color: #f9f9f9;
+  padding: 0;
+  background: #fdfdfd;
   color: #333;
-}
-
-.container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 16px;
-}
-
-/* Top panel styling */
-.top-panel {
-  background-color: #e6faf3;
   text-align: center;
-  padding: 32px 16px 24px;
 }
 
-.top-panel h1 {
-  font-size: 2rem;
-  margin: 0 0 8px;
+.search-container {
+  padding: 50px 20px 20px;
+  background-color: #e0f7f1;
 }
 
-.top-panel p {
-  margin: 0 0 16px;
-  font-size: 1rem;
-}
-
-.top-panel input {
-  width: 100%;
-  max-width: 400px;
-  padding: 12px;
-  font-size: 1rem;
-  border-radius: 8px;
-  border: 2px solid #007bff;
-  outline: none;
-}
-
-/* Divider */
-hr {
-  border: none;
-  border-top: 1px solid #ccc;
-  margin: 20px 0;
-}
-
-/* Bottom panel styling */
-.bottom-panel {
-  text-align: center;
-  padding: 0 16px 32px;
-}
-
-.bottom-panel p {
-  font-size: 1.1rem;
+.search-container h1 {
+  font-size: 36px;
   margin-bottom: 10px;
 }
 
-textarea {
-  width: 100%;
-  height: 100px;
+.search-container input {
   padding: 12px;
-  font-size: 1rem;
-  font-family: monospace;
+  width: 280px;
+  font-size: 16px;
   border-radius: 8px;
   border: 1px solid #ccc;
-  resize: vertical;
+}
+
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+.grid-container div {
+  width: 160px;
+  text-align: center;
+}
+
+.grid-container img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+textarea {
+  width: 80%;
+  height: 120px;
+  margin-top: 20px;
+  font-size: 14px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 button {
-  margin-top: 12px;
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: #007bff;
+  margin-top: 15px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007BFF;
   color: white;
   border: none;
   border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
 }
 
 button:hover {
   background-color: #0056b3;
 }
 
-/* Mobile responsiveness */
-@media (max-width: 480px) {
-  .top-panel h1 {
-    font-size: 1.5rem;
-  }
-
-  .top-panel p,
-  .bottom-panel p {
-    font-size: 0.95rem;
-  }
-
-  textarea {
-    height: 90px;
-  }
+#output {
+  margin-top: 20px;
+  max-width: 80%;
+  text-align: center;
 }
