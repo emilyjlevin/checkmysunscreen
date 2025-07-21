@@ -33,3 +33,14 @@ body {
   justify-content: center;
   gap: 16px;
   padding
+
+
+  .lilac-button {
+  background-color: #c8a2c8;
+}
+
+.lilac-button:hover {
+  background-color: #a97aa9;
+}
+
+  
