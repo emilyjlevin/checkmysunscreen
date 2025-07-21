@@ -117,14 +117,4 @@ function displayProductGrid(productList) {
   });
 }
 
-document.getElementById('brandSearch').addEventListener('input', function () {
-  const query = this.value.toLowerCase();
-  const grid = document.getElementById('resultsGrid');
-  grid.innerHTML = '';
 
-  const filtered = query
-    ? allProducts.filter(p => p.brand.toLowerCase().includes(query))
-    : allProducts;
-
-  displayProductGrid(filtered);
-});
