@@ -30,6 +30,41 @@ const format = str => str.trim().toLowerCase();
 
 document.getElementById('checkButton').addEventListener('click', checkIngredients);
 document.getElementById('checkBrand').addEventListener('click', checkBrand);
+function checkBrand() {
+  const brandInput = document.getElementById('brandSearch').value.toLowerCase();
+  fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+      const filtered = data.filter(product =>
+        product.brand.toLowerCase().includes(brandInput)
+      );
+      displayProductGrid(filtered);
+    });
+}
+
+function displayProductGrid(products) {
+  const grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+
+  products.forEach(product => {
+    const item = document.createElement('div');
+    const img = document.createElement('img');
+    img.src = product.image;
+    img.alt = product.name;
+
+    img.onclick = () => {
+      alert("Ingredients: " + product.ingredients.join(', '));
+    };
+
+    const label = document.createElement('p');
+    label.textContent = product.name;
+
+    item.appendChild(img);
+    item.appendChild(label);
+    grid.appendChild(item);
+  });
+}
+
 
 
 function checkIngredients() {
