@@ -28,52 +28,9 @@ const nac80List = [
 
 const format = str => str.trim().toLowerCase();
 
-// Buttons
 document.getElementById('checkButton').addEventListener('click', checkIngredients);
 document.getElementById('checkBrand').addEventListener('click', checkBrand);
 
-// Brand search
-let allProducts = [];
-
-fetch('products.json')
-  .then(res => res.json())
-  .then(data => {
-    allProducts = data;
-  });
-
-function checkBrand() {
-  const brandInput = document.getElementById('brandSearch').value.toLowerCase();
-  const filtered = allProducts.filter(product =>
-    product.brand.toLowerCase().includes(brandInput)
-  );
-  displayProductGrid(filtered);
-}
-
-function displayProductGrid(products) {
-  const grid = document.getElementById('resultsGrid');
-  grid.innerHTML = '';
-
-  products.forEach(product => {
-    const card = document.createElement('div');
-    const img = document.createElement('img');
-    img.src = 'images/' + product.image;
-    img.alt = product.name;
-
-    const label = document.createElement('p');
-    label.textContent = product.name;
-
-    card.appendChild(img);
-    card.appendChild(label);
-    card.onclick = () => {
-      document.getElementById('ingredientInput').value = product.ingredients.join(', ');
-      checkIngredients();
-    };
-
-    grid.appendChild(card);
-  });
-}
-
-// Ingredient check
 function checkIngredients() {
   const input = document.getElementById('ingredientInput').value;
   const ingredients = input.split(',').map(format);
@@ -110,3 +67,55 @@ function displayResults({ nac80Matches, fragrance, adjacent }) {
   results.innerHTML += formatResult("fragrance ingredients found", fragrance);
   results.innerHTML += formatResult("adjacent ingredients found", adjacent);
 }
+
+let allProducts = [];
+
+fetch('products.json')
+  .then(res => res.json())
+  .then(data => {
+    allProducts = data;
+    document.getElementById('brandSearch').dispatchEvent(new Event('input'));
+  });
+
+function checkBrand() {
+  const brandInput = document.getElementById('brandSearch').value.toLowerCase();
+  const filtered = allProducts.filter(product =>
+    product.brand.toLowerCase().includes(brandInput)
+  );
+  displayProductGrid(filtered);
+}
+
+function displayProductGrid(products) {
+  const grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+
+  products.forEach(product => {
+    const card = document.createElement('div');
+    const img = document.createElement('img');
+    img.src = "images/" + product.image;
+    img.alt = product.name;
+    img.onclick = () => {
+      document.getElementById('ingredientInput').value = product.ingredients;
+      checkIngredients();
+    };
+
+    const label = document.createElement('p');
+    label.textContent = product.name;
+
+    card.appendChild(img);
+    card.appendChild(label);
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('brandSearch').addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+
+  const filtered = query
+    ? allProducts.filter(p => p.brand.toLowerCase().includes(query))
+    : allProducts;
+
+  displayProductGrid(filtered);
+});
