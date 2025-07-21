@@ -4,15 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Check My Sunscreen</title>
-
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVTV6BEB0X"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-TVTV6BEB0X');
-  </script>
-
   <style>
     body {
       font-family: "Helvetica Neue", sans-serif;
@@ -25,151 +16,50 @@
 
     .search-container {
       padding: 40px 16px 20px;
-      background-color: #e0f7f1;
     }
 
-    .search-container h1 {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .search-container p {
-      font-size: 16px;
-      margin-bottom: 12px;
-    }
-
-    .search-container input {
-      padding: 12px;
-      width: 90%;
-      max-width: 360px;
-      font-size: 16px;
-      border-radius: 10px;
-      border: 1px solid #bbb;
-    }
-
-    .autocomplete-list {
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      max-width: 360px;
-      margin: 0 auto;
-      padding: 0;
-      list-style: none;
-      position: relative;
-      z-index: 10;
-    }
-
-    .autocomplete-list li {
+    input, button {
       padding: 10px;
-      cursor: pointer;
-      text-align: left;
+      margin: 8px;
+      font-size: 16px;
     }
 
-    .autocomplete-list li:hover {
-      background-color: #f0f0f0;
-    }
-
-    .grid-container {
+    #resultsGrid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding: 30px 16px;
+      margin: 20px;
     }
 
-    .grid-container div {
-      width: 140px;
-      text-align: center;
-    }
-
-    .grid-container img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-
-    .ingredient-checker h3 {
-      font-size: 16px;
-      margin: 30px 0 10px;
-    }
-
-    textarea {
-      width: 90%;
-      height: 120px;
-      font-size: 14px;
-      padding: 12px;
-      border-radius: 10px;
+    #resultsGrid img {
       border: 1px solid #ccc;
-      resize: vertical;
-    }
-
-    button {
-      margin-top: 16px;
-      padding: 12px 20px;
-      font-size: 16px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
+      border-radius: 4px;
       cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    #results {
-      margin-top: 24px;
-      max-width: 90%;
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    @media (max-width: 500px) {
-      .search-container h1 {
-        font-size: 24px;
-      }
-
-      .search-container p {
-        font-size: 14px;
-      }
-
-      .ingredient-checker h3 {
-        font-size: 13px;
-      }
-
-      button {
-        font-size: 15px;
-      }
     }
   </style>
 </head>
-
 <body>
 
+  <h1>Check My Sunscreen</h1>
+
   <div class="search-container">
-    <h1>Check My Sunscreen</h1>
-    <p>Start typing a brand name to find your sunscreen:</p>
-    <input type="text" id="brandSearch" placeholder="e.g., Neutrogena" autocomplete="off" />
-    <button id="checkBrand" class="lilac-button">Check brand</button>
-    <br><br>
-    <ul id="autocomplete-list" class="autocomplete-list"></ul>
-  </div>
-
-  <div id="resultsGrid" class="grid-container"></div>
-
-  <hr style="margin: 40px 0;">
-
-  <div class="ingredient-checker">
-    <h3>Or paste your ingredients below:</h3>
-    <textarea id="ingredientInput" placeholder="e.g., homosalate, octocrylene, etc."></textarea>
+    <input type="text" id="ingredientInput" placeholder="Paste your ingredients here" size="60" />
     <br>
     <button id="checkButton">Check Ingredients</button>
-    <div id="brandResults"></div>
     <div id="ingredientResults"></div>
   </div>
 
+  <hr>
+
+  <div class="search-container">
+    <input type="text" id="brandSearch" placeholder="Search by brand (e.g., Neutrogena)" size="40" />
+    <br>
+    <button id="checkBrand">Find Products</button>
+    <div id="resultsGrid"></div>
+  </div>
+
   <script src="script.js"></script>
+
 </body>
 </html>
