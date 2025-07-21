@@ -74,7 +74,6 @@ fetch('products.json')
   .then(res => res.json())
   .then(data => {
     allProducts = data;
-    document.getElementById('brandSearch').dispatchEvent(new Event('input'));
   });
 
 function checkBrand() {
