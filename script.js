@@ -66,3 +66,43 @@ function displayResults({ nac80Matches, fragrance, adjacent }) {
   results.innerHTML += formatResult("fragrance ingredients found", fragrance);
   results.innerHTML += formatResult("adjacent ingredients found", adjacent);
 }
+
+
+
+
+
+// --- Load product data ---
+let allProducts = [];
+
+fetch('products.json') // change path if needed
+  .then(res => res.json())
+  .then(data => {
+    allProducts = data;
+    document.getElementById('brandSearch').dispatchEvent(new Event('input'));
+  });
+
+// --- Display matching products by brand ---
+document.getElementById('brandSearch').addEventListener('input', function () {
+  const query = this.value.toLowerCase();
+  const grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+
+  const filtered = query
+    ? allProducts.filter(p => p.brand.includes(query))
+    : allProducts;
+
+  filtered.forEach(product => {
+    const card = document.createElement('div');
+    card.innerHTML = `
+      <img src="images/${product.image}" alt="${product.name}">
+      <p>${product.name}</p>`;
+    card.onclick = () => {
+      document.getElementById('ingredientInput').value = product.ingredients;
+      checkIngredients();
+    };
+    grid.appendChild(card);
+  });
+});
+
+
+
