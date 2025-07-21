@@ -29,6 +29,8 @@ const nac80List = [
 const format = str => str.trim().toLowerCase();
 
 document.getElementById('checkButton').addEventListener('click', checkIngredients);
+document.getElementById('checkBrand').addEventListener('click', checkBrand);
+
 
 function checkIngredients() {
   const input = document.getElementById('ingredientInput').value;
