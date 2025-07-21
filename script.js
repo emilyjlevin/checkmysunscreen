@@ -77,8 +77,8 @@ fetch('products.json')
   });
 
 function checkBrand() {
-  const input = document.getElementById("brandInput").value.toLowerCase(); // lowercase match
-  const resultsContainer = document.getElementById("results");
+const input = document.getElementById("brandSearch").value.toLowerCase();
+  const resultsContainer = document.getElementById("resultsGrid");
   resultsContainer.innerHTML = ""; // clear previous results
 
   allProducts.forEach(product => {
