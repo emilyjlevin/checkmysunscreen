@@ -28,18 +28,25 @@ const nac80List = [
 
 const format = str => str.trim().toLowerCase();
 
+// Buttons
 document.getElementById('checkButton').addEventListener('click', checkIngredients);
 document.getElementById('checkBrand').addEventListener('click', checkBrand);
+
+// Brand search
+let allProducts = [];
+
+fetch('products.json')
+  .then(res => res.json())
+  .then(data => {
+    allProducts = data;
+  });
+
 function checkBrand() {
   const brandInput = document.getElementById('brandSearch').value.toLowerCase();
-  fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-      const filtered = data.filter(product =>
-        product.brand.toLowerCase().includes(brandInput)
-      );
-      displayProductGrid(filtered);
-    });
+  const filtered = allProducts.filter(product =>
+    product.brand.toLowerCase().includes(brandInput)
+  );
+  displayProductGrid(filtered);
 }
 
 function displayProductGrid(products) {
@@ -47,26 +54,26 @@ function displayProductGrid(products) {
   grid.innerHTML = '';
 
   products.forEach(product => {
-    const item = document.createElement('div');
+    const card = document.createElement('div');
     const img = document.createElement('img');
-    img.src = product.image;
+    img.src = 'images/' + product.image;
     img.alt = product.name;
-
-    img.onclick = () => {
-      alert("Ingredients: " + product.ingredients.join(', '));
-    };
 
     const label = document.createElement('p');
     label.textContent = product.name;
 
-    item.appendChild(img);
-    item.appendChild(label);
-    grid.appendChild(item);
+    card.appendChild(img);
+    card.appendChild(label);
+    card.onclick = () => {
+      document.getElementById('ingredientInput').value = product.ingredients.join(', ');
+      checkIngredients();
+    };
+
+    grid.appendChild(card);
   });
 }
 
-
-
+// Ingredient check
 function checkIngredients() {
   const input = document.getElementById('ingredientInput').value;
   const ingredients = input.split(',').map(format);
@@ -103,43 +110,3 @@ function displayResults({ nac80Matches, fragrance, adjacent }) {
   results.innerHTML += formatResult("fragrance ingredients found", fragrance);
   results.innerHTML += formatResult("adjacent ingredients found", adjacent);
 }
-
-
-
-
-
-// --- Load product data ---
-let allProducts = [];
-
-fetch('products.json') // change path if needed
-  .then(res => res.json())
-  .then(data => {
-    allProducts = data;
-    document.getElementById('brandSearch').dispatchEvent(new Event('input'));
-  });
-
-// --- Display matching products by brand ---
-document.getElementById('brandSearch').addEventListener('input', function () {
-  const query = this.value.toLowerCase();
-  const grid = document.getElementById('resultsGrid');
-  grid.innerHTML = '';
-
-  const filtered = query
-    ? allProducts.filter(p => p.brand.includes(query))
-    : allProducts;
-
-  filtered.forEach(product => {
-    const card = document.createElement('div');
-    card.innerHTML = `
-      <img src="images/${product.image}" alt="${product.name}">
-      <p>${product.name}</p>`;
-    card.onclick = () => {
-      document.getElementById('ingredientInput').value = product.ingredients;
-      checkIngredients();
-    };
-    grid.appendChild(card);
-  });
-});
-
-
-
