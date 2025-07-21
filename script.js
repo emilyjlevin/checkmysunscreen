@@ -79,10 +79,14 @@ fetch('products.json')
 
 function checkBrand() {
   const brandInput = document.getElementById('brandSearch').value.toLowerCase();
-  const filtered = allProducts.filter(product =>
-    product.brand.toLowerCase().includes(brandInput)
-  );
-  displayProductGrid(filtered);
+  fetch('products.json')
+    .then(response => response.json())
+    .then(data => {
+      const filtered = data.filter(product =>
+        product.brand.toLowerCase().includes(brandInput)
+      );
+      displayProductGrid(filtered);
+    });
 }
 
 function displayProductGrid(products) {
