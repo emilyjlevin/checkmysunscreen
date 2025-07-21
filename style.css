@@ -17,8 +17,7 @@ body {
   margin-bottom: 10px;
 }
 
-.search-container input,
-textarea {
+.search-container input {
   padding: 12px;
   width: 100%;
   max-width: 360px;
@@ -28,33 +27,20 @@ textarea {
   box-sizing: border-box;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-#resultsGrid img {
-  max-width: 200px;
-  border-radius: 12px;
-  cursor: pointer;
-}
-
 .grid-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 16px;
-  padding: 20px;
-}
+  padding
 
-.lilac-button {
+
+  .lilac-button {
   background-color: #c8a2c8;
-  color: white;
 }
 
 .lilac-button:hover {
-  background-color: #818AFC;
+  background-color: #a97aa9;
 }
+
+  
