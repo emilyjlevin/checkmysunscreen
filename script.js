@@ -52,7 +52,7 @@ function checkIngredients() {
 }
 
 function displayResults({ nac80Matches, fragrance, adjacent }) {
-  const results = document.getElementById('results');
+  const results = document.getElementById('ingredientResults');  // 🔧 changed this line
   results.innerHTML = '';
 
   function formatResult(title, list) {
@@ -77,7 +77,7 @@ fetch('products.json')
   });
 
 function checkBrand() {
-const input = document.getElementById("brandSearch").value.toLowerCase();
+  const input = document.getElementById("brandSearch").value.toLowerCase();
   const resultsContainer = document.getElementById("resultsGrid");
   resultsContainer.innerHTML = ""; // clear previous results
 
@@ -86,7 +86,7 @@ const input = document.getElementById("brandSearch").value.toLowerCase();
       const img = document.createElement("img");
       img.src = `images/${product.image}`;
       img.alt = product.name;
-      img.style.width = "180px";  // force consistent size
+      img.style.width = "180px";
       img.style.height = "auto";
 
       resultsContainer.appendChild(img);
@@ -116,5 +116,3 @@ function displayProductGrid(productList) {
     grid.appendChild(card);
   });
 }
-
-
