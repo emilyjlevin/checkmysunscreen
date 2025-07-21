@@ -1,0 +1,35 @@
+
+[
+
+  {
+    "brand": "neutrogena",
+    "name": "Neutrogena Purescreen+ Tinted Sunscreen for Face with SPF 30, Broad Spectrum Mineral Sunscreen with Zinc Oxide and Vitamin E, Water Resistant, Fragrance Free, Medium, 1.1 fl oz",
+    "image": "neutrogena-purescreen-medium-spf30.jpg",
+    "ingredients": "Water, Isohexadecane, Dicaprylyl Carbonate, Dimethicone, Isopropyl Palmitate, Isononyl Isononanoate, Cetyl PEG/PPG-10/1 Dimethicone, C12-15 Alkyl Benzoate, Sodium Chloride, Polyhydroxystearic Acid, Tocopheryl Acetate, Triethoxycaprylylsilane, Sorbitan Sesquioleate, Phenoxyethanol, Ethylhexylglycerin, Dimethiconol, Aluminum Hydroxide, Dimethicone Crosspolymer, Stearic Acid, Xanthan Gum, Iron Oxides",
+    "spf": "30",
+    "vehicle": "lotion",
+    "tinted": true,
+    "area": "face",
+    "audience": "adult",
+    "type": "physical",
+    "sport": false
+  },
+
+  {
+    "brand": "neutrogena",
+    "name": "Neutrogena Retinol Treatment & Tinted Facial Moisturizer, Healthy Skin Anti-Aging Perfector, Broad Spectrum SPF 20 Sunscreen & Titanium Dioxide, Blendable Sheer Coverage, 40 Neutral to Tan, 1 fl. Oz",
+    "image": "neutrogena-healthyskin-antiaging-neutraltan-spf20.jpg",
+    "ingredients": "Water, Titanium Dioxide, Isopropyl Isostearate, Cyclopentasiloxane, Dimethicone, Butylene Glycol, Glyceryl Stearate, Cetyl Alcohol, Cetearyl Alcohol, PEG-75 Stearate, Lauroyl Lysine, Tocopheryl Acetate, Olea Europaea (Olive) Fruit Extract, BHT, Erythorbic Acid, Bisabolol, Retinyl Palmitate, Retinol, Arginine, Silica, Polysorbate 20, PEG-100 Stearate, Isostearyl Palmitate, Sclerotium Gum, Polysilicone-11, Ammonium Polyacryloyldimethyl Taurate, Ceteth-20, Steareth-20, Tetrasodium EDTA, Iron Oxides, Methylparaben, Propylaparaben, Ethylparaben, Phenoxyethanol, Fragrance",
+    "spf": "20",
+    "vehicle": "lotion",
+    "tinted": true,
+    "area": "face",
+    "audience": "adult",
+    "type": "chemical",
+    "sport": false
+  },
+
+
+
+
+]
