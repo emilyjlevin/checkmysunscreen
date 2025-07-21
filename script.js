@@ -82,7 +82,7 @@ function checkBrand() {
   const resultsContainer = document.getElementById("results");
   resultsContainer.innerHTML = ""; // clear previous results
 
-  products.forEach(product => {
+  allProducts.forEach(product => {
     if (product.brand.toLowerCase() === input) {
       const img = document.createElement("img");
       img.src = `images/${product.image}`;
@@ -95,11 +95,11 @@ function checkBrand() {
   });
 }
 
-function displayProductGrid(products) {
+function displayProductGrid(productList) {
   const grid = document.getElementById('resultsGrid');
   grid.innerHTML = '';
 
-  products.forEach(product => {
+  productList.forEach(product => {
     const card = document.createElement('div');
     const img = document.createElement('img');
     img.src = "images/" + product.image;
