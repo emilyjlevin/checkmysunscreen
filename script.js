@@ -78,15 +78,21 @@ fetch('products.json')
   });
 
 function checkBrand() {
-  const brandInput = document.getElementById('brandSearch').value.toLowerCase();
-  fetch('products.json')
-    .then(response => response.json())
-    .then(data => {
-      const filtered = data.filter(product =>
-        product.brand.toLowerCase().includes(brandInput)
-      );
-      displayProductGrid(filtered);
-    });
+  const input = document.getElementById("brandInput").value.toLowerCase(); // lowercase match
+  const resultsContainer = document.getElementById("results");
+  resultsContainer.innerHTML = ""; // clear previous results
+
+  products.forEach(product => {
+    if (product.brand.toLowerCase() === input) {
+      const img = document.createElement("img");
+      img.src = `images/${product.image}`;
+      img.alt = product.name;
+      img.style.width = "180px";  // force consistent size
+      img.style.height = "auto";
+
+      resultsContainer.appendChild(img);
+    }
+  });
 }
 
 function displayProductGrid(products) {
