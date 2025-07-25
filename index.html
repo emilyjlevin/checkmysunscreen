@@ -75,6 +75,34 @@
       margin-top: 10px;
     }
 
-    #ingredientResults {
+     #ingredientResults {
       margin-top: 20px;
-      text-align: le
+      text-align: left;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mint-top">
+    <h1>Check My Sunscreen</h1>
+    <p>Search for a sunscreen brand</p>
+    <input type="text" id="brandSearch" placeholder="e.g., Neutrogena">
+    <button id="checkBrand">Check brand</button>
+  </div>
+
+  <div id="resultsGrid"></div>
+
+  <div class="white-bottom">
+    <h2>Check My Ingredients</h2>
+    <p>Paste the ingredients list below:</p>
+    <textarea id="ingredientInput" placeholder="Water, Titanium Dioxide, etc."></textarea><br>
+    <button id="checkButton" type="button">Check Ingredients</button>
+    <div id="ingredientResults"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
