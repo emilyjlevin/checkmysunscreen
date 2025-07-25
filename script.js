@@ -1,5 +1,3 @@
-// script.js
-
 const nac80List = [
   "1,3-diphenylguanidine", "2-hydroxyethyl methacrylate", "2-mercaptobenzothiazole",
   "2-n-octyl-4-isothiazolin-3-one", "3-(dimethylamino)-1-propylamine",
@@ -30,14 +28,6 @@ const nac80List = [
 
 const format = str => str.trim().toLowerCase();
 
-let allProducts = [];
-
-fetch('products.json')
-  .then(res => res.json())
-  .then(data => {
-    allProducts = data;
-  });
-
 document.getElementById('checkButton').addEventListener('click', checkIngredients);
 document.getElementById('checkBrand').addEventListener('click', checkBrand);
 
@@ -58,7 +48,11 @@ function checkIngredients() {
     }
   });
 
-  const results = document.getElementById('ingredientResults');
+  displayResults({ nac80Matches, fragrance, adjacent });
+}
+
+function displayResults({ nac80Matches, fragrance, adjacent }) {
+  const results = document.getElementById('ingredientResults');  // 🔧 changed this line
   results.innerHTML = '';
 
   function formatResult(title, list) {
@@ -74,37 +68,51 @@ function checkIngredients() {
   results.innerHTML += formatResult("adjacent ingredients found", adjacent);
 }
 
+let allProducts = [];
+
+fetch('products.json')
+  .then(res => res.json())
+  .then(data => {
+    allProducts = data;
+  });
+
 function checkBrand() {
   const input = document.getElementById("brandSearch").value.toLowerCase();
   const resultsContainer = document.getElementById("resultsGrid");
-  resultsContainer.innerHTML = "";
+  resultsContainer.innerHTML = ""; // clear previous results
 
   allProducts.forEach(product => {
     if (product.brand.toLowerCase() === input) {
-      const card = document.createElement("div");
-      card.style.display = "inline-block";
-      card.style.margin = "10px";
-      card.style.textAlign = "center";
-
       const img = document.createElement("img");
       img.src = `images/${product.image}`;
       img.alt = product.name;
-      img.style.width = "120px";
+      img.style.width = "180px";
       img.style.height = "auto";
-      img.style.cursor = "pointer";
 
-      img.onclick = () => {
-        document.getElementById('ingredientInput').value = product.ingredients;
-        checkIngredients();
-      };
-
-      const label = document.createElement("p");
-      label.textContent = product.name;
-      label.style.fontSize = "12px";
-
-      card.appendChild(img);
-      card.appendChild(label);
-      resultsContainer.appendChild(card);
+      resultsContainer.appendChild(img);
     }
+  });
+}
+
+function displayProductGrid(productList) {
+  const grid = document.getElementById('resultsGrid');
+  grid.innerHTML = '';
+
+  productList.forEach(product => {
+    const card = document.createElement('div');
+    const img = document.createElement('img');
+    img.src = "images/" + product.image;
+    img.alt = product.name;
+    img.onclick = () => {
+      document.getElementById('ingredientInput').value = product.ingredients;
+      checkIngredients();
+    };
+
+    const label = document.createElement('p');
+    label.textContent = product.name;
+
+    card.appendChild(img);
+    card.appendChild(label);
+    grid.appendChild(card);
   });
 }
