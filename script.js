@@ -72,6 +72,9 @@ function checkBrand() {
 
     results.appendChild(container);
   });
+  
+  console.log("Clicked brand button");
+  console.log("All products:", allProducts);
 }
 
 function checkIngredients() {
