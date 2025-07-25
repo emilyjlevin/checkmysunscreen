@@ -26,10 +26,53 @@ const nac80List = [
   "ylang ylang oil"
 ];
 
-const format = str => str.trim().toLowerCase();
+const allProducts = [
+  {
+    brand: "neutrogena",
+    name: "Neutrogena Purescreen+ Tinted Sunscreen for Face with SPF 30",
+    image: "neutrogena-purescreen-medium-spf30.jpg",
+    ingredients: "Water, Isohexadecane, Dicaprylyl Carbonate, Dimethicone, Isopropyl Palmitate, Isononyl Isononanoate, Cetyl PEG/PPG-10/1 Dimethicone, C12-15 Alkyl Benzoate, Sodium Chloride, Polyhydroxystearic Acid, Tocopheryl Acetate, Triethoxycaprylylsilane, Sorbitan Sesquioleate, Phenoxyethanol, Ethylhexylglycerin, Dimethiconol, Aluminum Hydroxide, Dimethicone Crosspolymer, Stearic Acid, Xanthan Gum, Iron Oxides"
+  },
+  {
+    brand: "neutrogena",
+    name: "Neutrogena Retinol Treatment & Tinted Facial Moisturizer, Healthy Skin Anti-Aging Perfector Neutral to Tan SPF 20",
+    image: "neutrogena-healthyskin-antiaging-neutraltan-spf20.jpg",
+    ingredients: "Water, Titanium Dioxide, Isopropyl Isostearate, Cyclopentasiloxane, Dimethicone, Butylene Glycol, Glyceryl Stearate, Cetyl Alcohol, Cetearyl Alcohol, PEG-75 Stearate, Lauroyl Lysine, Tocopheryl Acetate, Olea Europaea (Olive) Fruit Extract, BHT, Erythorbic Acid, Bisabolol, Retinyl Palmitate, Retinol, Arginine, Silica, Polysorbate 20, PEG-100 Stearate, Isostearyl Palmitate, Sclerotium Gum, Polysilicone-11, Ammonium Polyacryloyldimethyl Taurate, Ceteth-20, Steareth-20, Tetrasodium EDTA, Iron Oxides, Methylparaben, Propylaparaben, Ethylparaben, Phenoxyethanol, Fragrance"
+  }
+];
 
-document.getElementById('checkButton').addEventListener('click', checkIngredients);
-document.getElementById('checkBrand').addEventListener('click', checkBrand);
+function format(str) {
+  return str.trim().toLowerCase();
+}
+
+function checkBrand() {
+  const input = document.getElementById("brandInput").value.toLowerCase();
+  const results = document.getElementById("brandResults");
+  results.innerHTML = '';
+
+  const filtered = allProducts.filter(p => p.brand.toLowerCase() === input);
+  filtered.forEach(product => {
+    const container = document.createElement("div");
+    container.className = "product";
+
+    const img = document.createElement("img");
+    img.src = "images/" + product.image;
+    img.alt = "";
+
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+    overlay.innerText = product.ingredients;
+
+    container.appendChild(img);
+    container.appendChild(overlay);
+
+    container.onclick = () => {
+      container.classList.toggle("clicked");
+    };
+
+    results.appendChild(container);
+  });
+}
 
 function checkIngredients() {
   const input = document.getElementById('ingredientInput').value;
@@ -48,71 +91,18 @@ function checkIngredients() {
     }
   });
 
-  displayResults({ nac80Matches, fragrance, adjacent });
-}
-
-function displayResults({ nac80Matches, fragrance, adjacent }) {
-  const results = document.getElementById('ingredientResults');  // 🔧 changed this line
+  const results = document.getElementById('ingredientResults');
   results.innerHTML = '';
 
-  function formatResult(title, list) {
+  function formatResult(title, list, color) {
     if (list.length > 0) {
-      return `<p style="color: red;">⚠️ <strong>${title}:</strong> ${list.join(", ")}</p>`;
+      return `<p style="color: ${color};"><strong>${title}:</strong> ${list.join(", ")}</p>`;
     } else {
       return `<p style="color: green;">✅ No ${title.toLowerCase()} found.</p>`;
     }
   }
 
-  results.innerHTML += formatResult("NAC-80 ingredients found", nac80Matches);
-  results.innerHTML += formatResult("fragrance ingredients found", fragrance);
-  results.innerHTML += formatResult("adjacent ingredients found", adjacent);
-}
-
-let allProducts = [];
-
-fetch('products.json')
-  .then(res => res.json())
-  .then(data => {
-    allProducts = data;
-  });
-
-function checkBrand() {
-  const input = document.getElementById("brandSearch").value.toLowerCase();
-  const resultsContainer = document.getElementById("resultsGrid");
-  resultsContainer.innerHTML = ""; // clear previous results
-
-  allProducts.forEach(product => {
-    if (product.brand.toLowerCase() === input) {
-      const img = document.createElement("img");
-      img.src = `images/${product.image}`;
-      img.alt = product.name;
-      img.style.width = "180px";
-      img.style.height = "auto";
-
-      resultsContainer.appendChild(img);
-    }
-  });
-}
-
-function displayProductGrid(productList) {
-  const grid = document.getElementById('resultsGrid');
-  grid.innerHTML = '';
-
-  productList.forEach(product => {
-    const card = document.createElement('div');
-    const img = document.createElement('img');
-    img.src = "images/" + product.image;
-    img.alt = product.name;
-    img.onclick = () => {
-      document.getElementById('ingredientInput').value = product.ingredients;
-      checkIngredients();
-    };
-
-    const label = document.createElement('p');
-    label.textContent = product.name;
-
-    card.appendChild(img);
-    card.appendChild(label);
-    grid.appendChild(card);
-  });
+  results.innerHTML += formatResult("NAC-80 ingredients found", nac80Matches, "red");
+  results.innerHTML += formatResult("Fragrance ingredients found", fragrance, "orange");
+  results.innerHTML += formatResult("Adjacent ingredients found", adjacent, "#e67e22");
 }
