@@ -7,7 +7,6 @@
   
   <script defer src="script.js"></script>
 
-  
   <style>
     body {
       margin: 0;
@@ -55,107 +54,53 @@
       margin-top: 20px;
     }
 
-    .product {
-      position: relative;
+    .flip-card {
+      background-color: transparent;
       width: 120px;
       height: 180px;
+      perspective: 1000px;
     }
 
-    .product img {
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 8px;
+    }
+
+    .flip-card-front {
+      background-color: white;
+    }
+
+    .flip-card-front img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background-color: white;
       border-radius: 8px;
-      transition: 0.3s;
-      aspect-ratio: 2 / 3;
     }
 
-
-    .flip-card {
-  background-color: transparent;
-  width: 120px;
-  height: 180px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 8px;
-}
-
-.flip-card-front {
-  background-color: white;
-}
-
-.flip-card-front img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-.flip-card-back {
-  background-color: #f9f9f9;
-  transform: rotateY(180deg);
-  font-size: 0.6em;
-  overflow-y: auto;
-  padding: 6px;
-  box-sizing: border-box;
-}
-
-
-    
-    /*
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(255, 255, 255, 0.85);
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      padding: 6px;
+    .flip-card-back {
+      background-color: #f9f9f9;
+      transform: rotateY(180deg);
       font-size: 0.6em;
-      color: #333;
-      text-align: left;
-      opacity: 0;
-      transition: opacity 0.3s;
       overflow-y: auto;
+      padding: 6px;
       box-sizing: border-box;
     }
-
-    .product.clicked img {
-      opacity: 0.3;
-    }
-
-    .product.clicked .overlay {
-      opacity: 1;
-    }
-    */
-
-    
-    
 
     hr {
       border: none;
@@ -203,8 +148,6 @@
     }
   </style>
 
-
-  
   <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVTV6BEB0X"></script>
   <script>
@@ -213,7 +156,6 @@
     gtag('js', new Date());
     gtag('config', 'G-TVTV6BEB0X');
   </script>
-  
 </head>
 <body>
   <div class="top">
