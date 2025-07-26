@@ -31,13 +31,19 @@ const allProducts = [
     brand: "neutrogena",
     name: "Neutrogena Purescreen+ Tinted Sunscreen for Face with SPF 30",
     image: "neutrogena-purescreen-medium-spf30.jpg",
-    ingredients: "Water, Isohexadecane, Dicaprylyl Carbonate, Dimethicone, Isopropyl Palmitate, Isononyl Isononanoate, Cetyl PEG/PPG-10/1 Dimethicone, C12-15 Alkyl Benzoate, Sodium Chloride, Polyhydroxystearic Acid, Tocopheryl Acetate, Triethoxycaprylylsilane, Sorbitan Sesquioleate, Phenoxyethanol, Ethylhexylglycerin, Dimethiconol, Aluminum Hydroxide, Dimethicone Crosspolymer, Stearic Acid, Xanthan Gum, Iron Oxides"
+    ingredients: "Active: Titanium Dioxide, Zinc Oxide. Inactive: Water, Isohexadecane, Dicaprylyl Carbonate, Dimethicone, Isopropyl Palmitate, Isononyl Isononanoate, Cetyl PEG/PPG-10/1 Dimethicone, C12-15 Alkyl Benzoate, Sodium Chloride, Polyhydroxystearic Acid, Tocopheryl Acetate, Triethoxycaprylylsilane, Sorbitan Sesquioleate, Phenoxyethanol, Ethylhexylglycerin, Dimethiconol, Aluminum Hydroxide, Dimethicone Crosspolymer, Stearic Acid, Xanthan Gum, Iron Oxides"
   },
   {
     brand: "neutrogena",
     name: "Neutrogena Retinol Treatment & Tinted Facial Moisturizer, Healthy Skin Anti-Aging Perfector Neutral to Tan SPF 20",
     image: "neutrogena-healthyskin-antiaging-neutraltan-spf20.jpg",
-    ingredients: "Water, Titanium Dioxide, Isopropyl Isostearate, Cyclopentasiloxane, Dimethicone, Butylene Glycol, Glyceryl Stearate, Cetyl Alcohol, Cetearyl Alcohol, PEG-75 Stearate, Lauroyl Lysine, Tocopheryl Acetate, Olea Europaea (Olive) Fruit Extract, BHT, Erythorbic Acid, Bisabolol, Retinyl Palmitate, Retinol, Arginine, Silica, Polysorbate 20, PEG-100 Stearate, Isostearyl Palmitate, Sclerotium Gum, Polysilicone-11, Ammonium Polyacryloyldimethyl Taurate, Ceteth-20, Steareth-20, Tetrasodium EDTA, Iron Oxides, Methylparaben, Propylaparaben, Ethylparaben, Phenoxyethanol, Fragrance"
+    ingredients: "Active: Octinoxate 7%, Octisalate 3%. Inactive: Water, Titanium Dioxide, Isopropyl Isostearate, Cyclopentasiloxane, Dimethicone, Butylene Glycol, Glyceryl Stearate, Cetyl Alcohol, Cetearyl Alcohol, PEG-75 Stearate, Lauroyl Lysine, Tocopheryl Acetate, Olea Europaea (Olive) Fruit Extract, BHT, Erythorbic Acid, Bisabolol, Retinyl Palmitate, Retinol, Arginine, Silica, Polysorbate 20, PEG-100 Stearate, Isostearyl Palmitate, Sclerotium Gum, Polysilicone-11, Ammonium Polyacryloyldimethyl Taurate, Ceteth-20, Steareth-20, Tetrasodium EDTA, Iron Oxides, Methylparaben, Propylaparaben, Ethylparaben, Phenoxyethanol, Fragrance"
+  },
+  {
+  brand: "neutrogena",
+  name: "Neutrogena Radiant Tinted Face Moisturizer Sheer Tan SPF 30",
+  image: "neutrogena-radiant-tinted-face-sheertan-spf30.jpg",
+  ingredients: "Active: Homosalate 5%, Octinoxate 7.5%, Octisalate 5%, Oxybenzone 2%, Titanium Dioxide 2.9%. Inactive: Water, Phenyl Trimethicone, Cetyl Dimethicone, Butylene Glycol, Silica, Cetearyl Alcohol, Barium Sulfate, PEG-100 Stearate, Glyceryl Stearate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Phenoxyethanol, Squalane, Bisabolol, Caprylyl Glycol, Magnesium Aluminum Silicate, Dipotassium Glycyrrhizate, Polysorbate 20, Polymethyl Methacrylate, Cetyl Hydroxyethylcellulose, Polysorbate 60, Xanthan Gum, Tetrasodium EDTA, Sorbic Acid, PEG-12 Dimethicone, Tocopheryl Acetate, Pantothenic Acid, Retinyl Palmitate, Ascorbic Acid, Iron Oxides, Mica, Titanium Dioxide"
   }
 ];
 
