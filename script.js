@@ -52,7 +52,69 @@ function format(str) {
 }
 
 
+
 function checkBrand() {
+  const input = document.getElementById("brandInput").value.toLowerCase();
+  const results = document.getElementById("brandResults");
+  results.innerHTML = '';
+
+  const filtered = allProducts.filter(p => p.brand.toLowerCase() === input);
+  filtered.forEach(product => {
+    const ingredients = product.ingredients.split(',').map(format);
+    const nac80Matches = [];
+    const fragrance = [];
+    const adjacent = [];
+
+    const mixTerms = ["paraben", "rubber", "mercapto", "carba", "thiourea", "lactone", "caine", "compositae", "textile"];
+    ingredients.forEach(ing => {
+      if (nac80List.includes(ing)) nac80Matches.push(ing);
+      else if (/(fragrance|parfum|perfume|parfume|perfum)/.test(ing)) fragrance.push(ing);
+      else if (/acrylate|tocopheryl acetate|limonene|linalool|cinnamal/.test(ing) || mixTerms.some(term => ing.includes(term))) {
+        adjacent.push(ing);
+      }
+    });
+
+    const container = document.createElement("div");
+    container.className = "flip-card";
+
+    const inner = document.createElement("div");
+    inner.className = "flip-card-inner";
+
+    const front = document.createElement("div");
+    front.className = "flip-card-front";
+
+    const img = document.createElement("img");
+    img.src = "images/" + product.image;
+    img.alt = "";
+    front.appendChild(img);
+
+    const back = document.createElement("div");
+    back.className = "flip-card-back";
+
+    const ingredientsText = document.createElement("div");
+    ingredientsText.textContent = product.ingredients;
+    ingredientsText.style.marginBottom = "6px";
+
+    const summary = document.createElement("div");
+    summary.innerHTML = `
+      <div style="color: red;">${nac80Matches.length > 0 ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
+      <div style="color: orange;">${fragrance.length > 0 ? "Fragrance: " + fragrance.join(", ") : "✅ No fragrance"}</div>
+      <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
+    `;
+
+    back.appendChild(ingredientsText);
+    back.appendChild(summary);
+
+    inner.appendChild(front);
+    inner.appendChild(back);
+    container.appendChild(inner);
+    results.appendChild(container);
+  });
+}
+
+
+
+/* function checkBrand() {
   const input = document.getElementById("brandInput").value.toLowerCase();
   const results = document.getElementById("brandResults");
   results.innerHTML = '';
@@ -65,6 +127,7 @@ function checkBrand() {
     const img = document.createElement("img");
     img.src = "images/" + product.image;
     img.alt = "";
+    */
 
 
     /*
