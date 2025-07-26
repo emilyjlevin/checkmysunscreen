@@ -96,8 +96,18 @@ function checkBrand() {
       <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
     `;
 
-    overlay.appendChild(ingredientsText);
-    overlay.appendChild(summary);
+
+    const overlayContent = document.createElement("div");
+    overlayContent.style.display = "flex";
+    overlayContent.style.flexDirection = "column";
+    overlayContent.style.alignItems = "flex-start";
+    overlayContent.style.overflowY = "auto";
+    overlayContent.appendChild(ingredientsText);
+    overlayContent.appendChild(summary);
+
+    overlay.appendChild(overlayContent);
+
+    
     container.appendChild(img);
     container.appendChild(overlay);
 
