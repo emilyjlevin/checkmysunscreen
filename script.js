@@ -51,6 +51,7 @@ function format(str) {
   return str.trim().toLowerCase();
 }
 
+
 function checkBrand() {
   const input = document.getElementById("brandInput").value.toLowerCase();
   const results = document.getElementById("brandResults");
@@ -65,12 +66,36 @@ function checkBrand() {
     img.src = "images/" + product.image;
     img.alt = "";
 
+
+    /*
     const overlay = document.createElement("div");
     overlay.className = "overlay";
-
+    
     const ingredientsText = document.createElement("div");
     ingredientsText.textContent = product.ingredients;
+    ingredientsText.style.fontSize = "0.6em";
+    ingredientsText.style.marginTop = "6px";
 
+    const summary = document.createElement("div");
+    summary.style.fontSize = "0.6em";
+    summary.style.marginTop = "4px";
+    summary.innerHTML = `
+    <div style="color: red;">${nac80Matches.length > 0 ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
+    <div style="color: orange;">${fragrance.length > 0 ? "Fragrance: " + fragrance.join(", ") : "✅ No fragrance"}</div>
+    <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
+    `;
+
+    container.appendChild(img);
+    container.appendChild(ingredientsText);
+    container.appendChild(summary);
+
+    */
+
+    
+
+
+
+    
     // 👇 Run ingredient analysis
     const ingredients = product.ingredients.split(',').map(format);
     const nac80Matches = [];
@@ -96,24 +121,21 @@ function checkBrand() {
       <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
     `;
 
+    const ingredientsText = document.createElement("div");
+    ingredientsText.textContent = product.ingredients;
+    ingredientsText.style.fontSize = "0.6em";
+    ingredientsText.style.marginTop = "6px";
 
-    const overlayContent = document.createElement("div");
-    overlayContent.style.display = "flex";
-    overlayContent.style.flexDirection = "column";
-    overlayContent.style.alignItems = "flex-start";
-    overlayContent.style.overflowY = "auto";
-    overlayContent.appendChild(ingredientsText);
-    overlayContent.appendChild(summary);
-
-    overlay.appendChild(overlayContent);
-
-    
     container.appendChild(img);
-    container.appendChild(overlay);
+    container.appendChild(ingredientsText);
+    container.appendChild(summary);
 
-    container.onclick = () => {
-      container.classList.toggle("clicked");
-    };
+
+
+
+   // container.onclick = () => {
+   // container.classList.toggle("clicked");
+   // };
 
     results.appendChild(container);
   });
