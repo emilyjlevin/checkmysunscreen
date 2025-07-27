@@ -44,7 +44,13 @@ const allProducts = [
   name: "Neutrogena Radiant Tinted Face Moisturizer Sheer Tan SPF 30",
   image: "neutrogena-radiant-tinted-face-sheertan-spf30.png",
   ingredients: "Active: Homosalate 5%, Octinoxate 7.5%, Octisalate 5%, Oxybenzone 2%, Titanium Dioxide 2.9%. Inactive: Water, Phenyl Trimethicone, Cetyl Dimethicone, Butylene Glycol, Silica, Cetearyl Alcohol, Barium Sulfate, PEG-100 Stearate, Glyceryl Stearate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Phenoxyethanol, Squalane, Bisabolol, Caprylyl Glycol, Magnesium Aluminum Silicate, Dipotassium Glycyrrhizate, Polysorbate 20, Polymethyl Methacrylate, Cetyl Hydroxyethylcellulose, Polysorbate 60, Xanthan Gum, Tetrasodium EDTA, Sorbic Acid, PEG-12 Dimethicone, Tocopheryl Acetate, Pantothenic Acid, Retinyl Palmitate, Ascorbic Acid, Iron Oxides, Mica, Titanium Dioxide"
-  }
+  },
+  {
+  brand: "neutrogena",
+  name: "Neutrogena Invisible Daily Defense Face SPF 60",
+  image: "neutrogena_invisible_daily_defense_face_spf60.png",
+  ingredients: "Active: Avobenzone 3%, Homosalate 13.5%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Glycerin, Alcohol Denat., Silica, Dimethicone, Aluminum Starch Octenylsuccinate, Polyurethane-62, Phenoxyethanol, Pentylene Glycol, Sodium Acryloyldimethyltaurate/VP Crosspolymer, Acrylates/Dimethicone Copolymer, Glyceryl Stearate, Chlorphenesin, Styrene/Acrylates Copolymer, Zingiber Officinale (Ginger) Root Extract, Menthyl Lactate, Tocopheryl Acetate, Disodium EDTA, Trideceth-6, Chrysanthemum Parthenium (Feverfew) Flower/Leaf/Stem Juice, Sodium Hydroxide, Yellow 5, Red 40"
+}
 ];
 
 function format(str) {
