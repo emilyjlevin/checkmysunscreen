@@ -69,6 +69,8 @@ function checkBrand() {
   results.innerHTML = '';
 
   const filtered = allProducts.filter(p => p.brand.toLowerCase() === input);
+  console.log("Filtered products:", filtered);
+
   filtered.forEach(product => {
 
     // ✅ NEW FLIP CARD FUNCTIONALITY
