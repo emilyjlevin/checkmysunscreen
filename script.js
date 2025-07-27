@@ -50,6 +50,12 @@ const allProducts = [
   name: "Neutrogena Invisible Daily Defense Face SPF 60",
   image: "neutrogena_invisible_daily_defense_face_spf60.png",
   ingredients: "Active: Avobenzone 3%, Homosalate 13.5%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Glycerin, Alcohol Denat., Silica, Dimethicone, Aluminum Starch Octenylsuccinate, Polyurethane-62, Phenoxyethanol, Pentylene Glycol, Sodium Acryloyldimethyltaurate/VP Crosspolymer, Acrylates/Dimethicone Copolymer, Glyceryl Stearate, Chlorphenesin, Styrene/Acrylates Copolymer, Zingiber Officinale (Ginger) Root Extract, Menthyl Lactate, Tocopheryl Acetate, Disodium EDTA, Trideceth-6, Chrysanthemum Parthenium (Feverfew) Flower/Leaf/Stem Juice, Sodium Hydroxide, Yellow 5, Red 40"
+},
+  {
+  brand: "neutrogena",
+  name: "Neutrogena Ultra Sheer Dry-Touch Lotion SPF 70",
+  image: "neutrogena_ultrasheer_drytouch_lotion_spf70.png",
+  ingredients: "Active: Avobenzone 3%, Homosalate 15%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Styrene/Acrylates Copolymer, Silica, Dimethicone, Potassium Cetyl Phosphate, Benzyl Alcohol, Beeswax, Caprylyl Methicone, Aluminum Starch Octenylsuccinate, Glyceryl Stearate, PEG-100 Stearate, Cetyl Dimethicone, Caprylyl Glycol, Ethylhexylglycerin, Behenyl Alcohol, Acrylates/Dimethicone Copolymer, Xanthan Gum, Chlorphenesin, Dimethicone/PEG-10/15 Crosspolymer, Sodium Polyacrylate, Hydrolyzed Jojoba Esters, Fragrance, Disodium EDTA, Ethylhexyl Stearate, Tocopheryl Acetate, BHT, Jojoba Esters, Trideceth-6"
 }
 ];
 
