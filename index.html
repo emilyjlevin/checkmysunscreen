@@ -108,20 +108,64 @@
   }
 
   .product .flip-card-back {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: rgba(255, 255, 255, 0.9); /* subtle white with transparency */
     color: #333;
     transform: rotateY(180deg);
     font-size: 8px;   /* 0.6em*/
     /* line-height: 1.2; */
     padding: 8px;
-    overflow: visible;  /* overflow-y: auto; */
-    display: block;   /* flex */
-   /* flex-direction: column; */
-   /* justify-content: flex-start; */  /* center */ 
-    /* align-items: center; */
+    overflow-y: auto;   /* overflow: visible;  */
+    display: flex;    /* display: block; */
+    flex-direction: column;
+    justify-content: flex-start;   /* center */ 
+    align-items: center;
     text-align: center;
+    border-radius: 12px;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
+
+    /* ✅ Make scrollbars smaller and less obtrusive */
+    .product .flip-card-back::-webkit-scrollbar {
+     width: 4px;
+    }
+
+    .product .flip-card-back::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .product .flip-card-back::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    /* ✅ Optional: add image faintly in background */
+    .product .flip-card-back::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: inherit;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: 0.08;
+      z-index: 0;
+      border-radius: 12px;
+    }
+
+    .product .flip-card-back > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    
   .flip-card-inner.flipped {
     transform: rotateY(180deg);
   }    
