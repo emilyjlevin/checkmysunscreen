@@ -114,9 +114,9 @@ function checkBrand() {
     container.appendChild(flipCardInner);
     
     // Flip toggle
-    container.onclick = () => {
-      flipCardInner.classList.toggle("flipped");
-    };
+    //container.onclick = () => {
+    //  flipCardInner.classList.toggle("flipped");
+   // };
 
   results.appendChild(container);
 
