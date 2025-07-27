@@ -113,78 +113,8 @@ function checkBrand() {
     flipCardInner.appendChild(back);
     container.appendChild(flipCardInner);
     
-    // Flip toggle
-    //container.onclick = () => {
-    //  flipCardInner.classList.toggle("flipped");
-   // };
-
   results.appendChild(container);
 
-
-    
-    /* ✅ OLD - DELETE (BEFORE FLIP CARD FUNCTIONALITY)
-    const container = document.createElement("div");
-    container.className = "product";
-
-    const img = document.createElement("img");
-    img.src = "images/" + product.image;
-    img.alt = "";
-
-    const overlay = document.createElement("div");
-    overlay.className = "overlay";
-
-    const ingredientsText = document.createElement("div");
-    ingredientsText.textContent = product.ingredients;
-
-    // 👇 Run ingredient analysis
-    const ingredients = product.ingredients.split(',').map(format);
-    const nac80Matches = [];
-    const fragrance = [];
-    const adjacent = [];
-
-    const mixTerms = ["paraben", "rubber", "mercapto", "carba", "thiourea", "lactone", "caine", "compositae", "textile"];
-
-    ingredients.forEach(ing => {
-      if (nac80List.includes(ing)) nac80Matches.push(ing);
-      else if (/(fragrance|parfum|perfume|parfume|perfum)/.test(ing)) fragrance.push(ing);
-      else if (/acrylate|tocopheryl acetate|limonene|linalool|cinnamal/.test(ing) || mixTerms.some(term => ing.includes(term))) {
-        adjacent.push(ing);
-      }
-    });
-
-    const summary = document.createElement("div");
-    summary.style.fontSize = "0.6em";
-    summary.style.marginTop = "8px";
-    summary.innerHTML = `
-      <div style="color: red;">${nac80Matches.length > 0 ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
-      <div style="color: orange;">${fragrance.length > 0 ? "Fragrance: " + fragrance.join(", ") : "✅ No fragrance"}</div>
-      <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
-    `;
-
-    const overlayContent = document.createElement("div");
-    overlayContent.style.display = "flex";
-    overlayContent.style.flexDirection = "column";
-    overlayContent.style.alignItems = "flex-start";
-    overlayContent.style.overflowY = "auto";
-    overlayContent.appendChild(ingredientsText);
-    overlayContent.appendChild(summary);
-
-    overlay.appendChild(overlayContent);
-
-    
-    container.appendChild(img);
-    container.appendChild(overlay);
-   */ //✅ end FLIP CARD FUNCTIONALITY
-    
-
-    
-    /* ✅ DELETE
-    container.onclick = () => {
-      container.classList.toggle("clicked");
-    };
-    */
-
-    results.appendChild(container);
   });
 }
 
