@@ -80,6 +80,12 @@ const allProducts = [
   "name": "CeraVe Hydrating Mineral Tinted Face Lotion SPF 30 (Medium Sheer Tint)",
   "image": "cerave_hydrating_mineral_tinted_mediumsheertint_spf30.png",
   "ingredients": "Active: Titanium Dioxide 5.5%, Zinc Oxide 10%. Inactive: Water, C12-15 Alkyl Benzoate, Isohexadecane, Isononyl Isononanoate, Dicaprylyl Ether, PEG-30 Dipolyhydroxystearate, Triethylhexanoin, Polyglyceryl-4 Isostearate, Dicaprylyl Carbonate, Ethylene/Acrylic Acid Copolymer, Triethanolamine, Silica, Poly C10-30 Alkyl Acrylate, Stearic Acid, Ceramide NP, Ceramide AP, Ceramide EOP, Carbomer, Niacinamide, Cetearyl Alcohol, Triethoxycaprylylsilane, Behentrimonium Methosulfate, Sodium Chloride, Salicylic Acid, Sodium Hyaluronate, Sodium Lauroyl Lactylate, Cholesterol, Aluminum Stearate, Alumina, Aluminum Hydroxide, Iron Oxides, Phenoxyethanol, P-Anisic Acid, Chlorphenesin, Tocopherol, Disodium EDTA, Disodium Stearoyl Glutamate, Propylene Carbonate, Citric Acid, Caprylyl Glycol, Capryloyl Salicylic Acid, Caprylic/Capric Triglyceride, Diethylhexyl Syringylidenemalonate, Disteardimonium Hectorite, Xanthan Gum, Phytosphingosine, Polyhydroxystearic Acid, Ethylhexylglycerin"
+},
+  {
+  "brand": "eltamd",
+  "name": "EltaMD UV Daily Tinted Face SPF 40",
+  "image": "eltamd_UVDaily_tinted_face_spf40.png",
+  "ingredients": "Active: Octinoxate 7.5%, Zinc Oxide 9.0%. Inactive: Water, Petrolatum, Isopropyl Palmitate, Dimethicone, Cetearyl Alcohol, Oleth-3 Phosphate, Phenoxyethanol, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Polyisobutene, Cetearyl Glucoside, Octyldodecyl Neopentanoate, Ethylhexyl Stearate, Polyether-1, Butylene Glycol, PEG-7 Trimethylolpropane Coconut Ether, Sodium Hyaluronate, Iodopropynyl Butylcarbamate, Citric Acid, Tocopheryl Acetate, Triethoxycaprylylsilane, Iron Oxides"
 }
 ];
 
