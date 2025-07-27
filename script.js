@@ -170,14 +170,42 @@ function checkIngredients() {
 
 
 
-  
 function formatResult(title, list) {
+  const titleKey = title.toLowerCase();
+  const hasMatch = list.length > 0;
+
+  const color = hasMatch ? "red" : "green";
+  const emoji = hasMatch ? "⚠️" : "✅";
+
+  let label;
+  if (titleKey.includes("nac-80")) {
+    label = hasMatch
+      ? "<strong>NAC-80 Ingredients Found:</strong> " + list.join(", ")
+      : "No NAC-80 ingredients found.";
+  } else if (titleKey.includes("fragrance")) {
+    label = hasMatch
+      ? "<strong>Fragrance Ingredients Found:</strong> " + list.join(", ")
+      : "No fragrance ingredients found.";
+  } else if (titleKey.includes("adjacent")) {
+    label = hasMatch
+      ? "<strong>Adjacent Ingredients Found:</strong> " + list.join(", ")
+      : "No adjacent ingredients found.";
+  }
+
+  return `<p style="color: ${color};">${emoji} ${label}</p>`;
+}
+
+
+
+  
+/* function formatResult(title, list) {
   const titleKey = title.toLowerCase();
   const isAdjacent = titleKey.includes("adjacent");
   const isFragrance = titleKey.includes("fragrance");
 
   if (list.length > 0) {
-    const color = isAdjacent ? "#e67e22" : "red";
+    //const color = isAdjacent ? "#e67e22" : "red";
+    const color = "red";
     return `<p style="color: ${color};">⚠️ <strong>${title}:</strong> ${list.join(", ")}</p>`;
   } else {
     const label = titleKey.includes("nac-80") ? "No NAC-80" :
@@ -186,5 +214,6 @@ function formatResult(title, list) {
     return `<p style="color: green;">✅ ${label} found.</p>`;
   }
 }
+*/
   
 
