@@ -97,7 +97,7 @@ function checkBrand() {
     });
 
     const summary = document.createElement("div");
-    summary.style.fontSize = "0.6em";
+    //summary.style.fontSize = "0.6em";
     summary.style.marginTop = "8px";
     summary.innerHTML = `
       <div style="color: red;">${nac80Matches.length > 0 ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
