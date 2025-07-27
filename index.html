@@ -14,6 +14,8 @@
     gtag('config', 'G-TVTV6BEB0X');
   </script>
 
+  
+  <!-- ✅ STYLE -->
   <style>
     body {
       margin: 0;
@@ -68,17 +70,55 @@
       border-radius: 8px;
       overflow: hidden;
       cursor: pointer;
+      perspective: 1000px;
     }
 
-    .product img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      background-color: transparent;
-      border-radius: 8px;
-      transition: 0.3s;
-      aspect-ratio: 2 / 3;
+    <!-- ✅ FLIP -->
+    .product .flip-card-inner {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     transition: transform 0.6s;
+     transform-style: preserve-3d;
     }
+
+    .product.clicked .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .product .flip-card-front,
+    .product .flip-card-back {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     backface-visibility: hidden;
+     border-radius: 8px;
+     top: 0;
+     left: 0;
+    }
+
+  .product .flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: transparent;
+    border-radius: 8px;
+    aspect-ratio: 2 / 3;
+  }
+
+  .product .flip-card-back {
+    background-color: #fff;
+    color: #333;
+    padding: 10px;
+    transform: rotateY(180deg);
+    font-size: 0.7em;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+<!-- ✅ end flip -->
+
 
     .overlay {
       position: absolute;
@@ -163,8 +203,9 @@
       .overlay {
         font-size: 0.6em;
       }
-    }
+    }   
   </style>
+  
 </head>
 <body>
   <div class="top">
