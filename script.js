@@ -74,8 +74,13 @@ const allProducts = [
   "name": "Neutrogena Sport Face Lotion SPF 70",
   "image": "neutrogena_sport_face_lotion_spf70.png",
   "ingredients": "Active: Avobenzone 3%, Homosalate 15%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Styrene/Acrylates Copolymer, Silica, Dimethicone, Potassium Cetyl Phosphate, Beeswax, Benzyl Alcohol, Caprylyl Methicone, Glyceryl Stearate, PEG-100 Stearate, Cetyl Dimethicone, Caprylyl Glycol, Ethylhexylglycerin, Behenyl Alcohol, Hydrolyzed Jojoba Esters, Acrylates/Dimethicone Copolymer, Xanthan Gum, Chlorphenesin, Dimethicone/PEG-10/15 Crosspolymer, Sodium Polyacrylate, Disodium EDTA, Ethylhexyl Stearate, Tocopheryl Acetate, Bisabolol, BHT, Jojoba Esters, Trideceth-6"
+},
+  {
+  "brand": "cerave",
+  "name": "CeraVe Hydrating Mineral Tinted Face Lotion SPF 30 (Medium Sheer Tint)",
+  "image": "cerave_hydrating_mineral_tinted_mediumsheertint_spf30.png",
+  "ingredients": "Active: Titanium Dioxide 5.5%, Zinc Oxide 10%. Inactive: Water, C12-15 Alkyl Benzoate, Isohexadecane, Isononyl Isononanoate, Dicaprylyl Ether, PEG-30 Dipolyhydroxystearate, Triethylhexanoin, Polyglyceryl-4 Isostearate, Dicaprylyl Carbonate, Ethylene/Acrylic Acid Copolymer, Triethanolamine, Silica, Poly C10-30 Alkyl Acrylate, Stearic Acid, Ceramide NP, Ceramide AP, Ceramide EOP, Carbomer, Niacinamide, Cetearyl Alcohol, Triethoxycaprylylsilane, Behentrimonium Methosulfate, Sodium Chloride, Salicylic Acid, Sodium Hyaluronate, Sodium Lauroyl Lactylate, Cholesterol, Aluminum Stearate, Alumina, Aluminum Hydroxide, Iron Oxides, Phenoxyethanol, P-Anisic Acid, Chlorphenesin, Tocopherol, Disodium EDTA, Disodium Stearoyl Glutamate, Propylene Carbonate, Citric Acid, Caprylyl Glycol, Capryloyl Salicylic Acid, Caprylic/Capric Triglyceride, Diethylhexyl Syringylidenemalonate, Disteardimonium Hectorite, Xanthan Gum, Phytosphingosine, Polyhydroxystearic Acid, Ethylhexylglycerin"
 }
-
 ];
 
 function format(str) {
