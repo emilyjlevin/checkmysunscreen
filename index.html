@@ -4,151 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Check My Sunscreen</title>
-  
-  <script defer src="script.js"></script>
-
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
-      background-color: #ffffff;
-      color: #111;
-    }
-
-    .top {
-      background-color: #d9f5f1;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .top h1 {
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    .top input {
-      padding: 10px;
-      width: 80%;
-      max-width: 300px;
-      font-size: 1em;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .top button {
-      padding: 10px 16px;
-      font-size: 1em;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    #brandResults {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 16px;
-      margin-top: 20px;
-    }
-
-    .flip-card {
-      background-color: transparent;
-      width: 120px;
-      height: 180px;
-      perspective: 1000px;
-    }
-
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.6s;
-      transform-style: preserve-3d;
-    }
-
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front, .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 8px;
-    }
-
-    .flip-card-front {
-      background-color: white;
-    }
-
-    .flip-card-front img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 8px;
-    }
-
-    .flip-card-back {
-      background-color: #f9f9f9;
-      transform: rotateY(180deg);
-      font-size: 0.6em;
-      overflow-y: auto;
-      padding: 6px;
-      box-sizing: border-box;
-    }
-
-    hr {
-      border: none;
-      border-top: 1px solid #ddd;
-      margin: 0;
-    }
-
-    .bottom {
-      background-color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .bottom h2 {
-      margin-bottom: 10px;
-    }
-
-    .bottom textarea {
-      width: 90%;
-      max-width: 400px;
-      height: 100px;
-      font-size: 1em;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-
-    .bottom button {
-      margin-top: 16px;
-      padding: 10px 20px;
-      font-size: 1em;
-      background-color: #00c48c;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-
-    #ingredientResults {
-      margin-top: 20px;
-      text-align: left;
-      max-width: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  </style>
-
-  <!-- ✅ Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TVTV6BEB0X"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -156,23 +11,122 @@
     gtag('js', new Date());
     gtag('config', 'G-TVTV6BEB0X');
   </script>
+  <style>
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      text-align: center;
+    }
+
+    .top-section {
+      background-color: #d0f0e9;
+      padding: 30px 10px;
+    }
+
+    .top-section h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+
+    .top-section p {
+      font-size: 1em;
+      margin: 8px 0 20px;
+    }
+
+    input, button {
+      font-size: 1em;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      width: 80%;
+      max-width: 300px;
+    }
+
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .bottom-section {
+      padding: 20px;
+      background: white;
+    }
+
+    .product {
+      position: relative;
+      display: inline-block;
+      width: 160px;
+      height: 240px;
+      margin: 10px;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .product img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: white;
+      color: black;
+      font-size: 10px;
+      padding: 8px;
+      box-sizing: border-box;
+      overflow-y: auto;
+      opacity: 0;
+      transition: opacity 0.3s;
+      text-align: left;
+    }
+
+    .product.clicked .overlay {
+      opacity: 0.95;
+    }
+
+    @media (max-width: 600px) {
+      .product {
+        width: 45%;
+        height: auto;
+        aspect-ratio: 2 / 3;
+      }
+
+      .overlay {
+        font-size: 9px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="top">
+  <div class="top-section">
     <h1>Check My Sunscreen</h1>
-    <input type="text" id="brandInput" placeholder="e.g., Neutrogena"><br>
+    <p>Search by brand</p>
+    <input id="brandInput" placeholder="e.g., neutrogena" />
     <button onclick="checkBrand()">Check brand</button>
-    <div id="brandResults"></div>
   </div>
 
-  <hr>
+  <div id="brandResults"></div>
 
-  <div class="bottom">
+  <div class="bottom-section">
     <h2>Check My Ingredients</h2>
-    <p>Or paste your ingredients below:</p>
-    <textarea id="ingredientInput" placeholder="e.g., octocrylene, tocopherol, fragrance"></textarea><br>
-    <button onclick="checkIngredients()">Check Ingredients</button>
-    <div id="ingredientResults"></div>
+    <p>Paste ingredients below (comma-separated)</p>
+    <textarea id="ingredientInput" rows="4" style="width: 90%; max-width: 500px;"></textarea>
+    <br />
+    <button style="background-color: #28a745;" onclick="checkIngredients()">Check Ingredients</button>
+    <div id="ingredientResults" style="margin-top: 20px; text-align: left; max-width: 500px; margin-left: auto; margin-right: auto;"></div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
