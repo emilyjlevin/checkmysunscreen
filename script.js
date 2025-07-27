@@ -62,6 +62,12 @@ const allProducts = [
   name: "Neutrogena Ultra Sheer Dry-Touch Lotion SPF 45",
   image: "neutrogena_ultrasheer_drytouch_lotion_spf45.png",
   ingredients: "Active: Avobenzone 3%, Homosalate 10%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Styrene/Acrylates Copolymer, Silica, Dimethicone, Potassium Cetyl Phosphate, Benzyl Alcohol, Beeswax, Caprylyl Methicone, Glyceryl Stearate, PEG-100 Stearate, Cetyl Dimethicone, Caprylyl Glycol, Ethylhexylglycerin, Aluminum Starch Octenylsuccinate, Behenyl Alcohol, Acrylates/Dimethicone Copolymer, Xanthan Gum, Sodium Polyacrylate, Chlorphenesin, Dimethicone/PEG-10/15 Crosspolymer, Hydrolyzed Jojoba Esters, Fragrance, Disodium EDTA, Ethylhexyl Stearate, Tocopheryl Acetate, BHT, Trideceth-6, Jojoba Esters"
+},
+  {
+  "brand": "neutrogena",
+  "name": "Neutrogena Beach Defense Oxybenzone-Free SPF 70",
+  "image": "neutrogena_beachdefense_oxybenzonefree_spf70.png",
+  "ingredients": "Active: Avobenzone 3%, Homosalate 15%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Styrene/Acrylates Copolymer, Potassium Cetyl Phosphate, Benzyl Alcohol, Silica, Glyceryl Stearate, PEG-100 Stearate, Dimethicone, Caprylyl Glycol, Synthetic Beeswax, Ethylhexylglycerin, Acrylates/C12-22 Alkyl Methacrylate Copolymer, Behenyl Alcohol, Fragrance, Xanthan Gum, Chlorphenesin, Dimethicone/PEG-10/15 Crosspolymer, Hydrolyzed Jojoba Esters, Disodium EDTA, Sodium Polyacrylate, Ethylhexyl Stearate, BHT, Jojoba Esters, Trideceth-6"
 }
 ];
 
