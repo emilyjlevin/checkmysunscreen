@@ -99,11 +99,35 @@ function checkBrand() {
     const summary = document.createElement("div");
     //summary.style.fontSize = "0.6em";
     summary.style.marginTop = "8px";
+
+    
+    /* DELETE
     summary.innerHTML = `
       <div style="color: red;">${nac80Matches.length > 0 ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
       <div style="color: orange;">${fragrance.length > 0 ? "Fragrance: " + fragrance.join(", ") : "✅ No fragrance"}</div>
       <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
     `;
+    */
+
+    summary.innerHTML = `
+  <div style="color: ${nac80Matches.length > 0 ? 'red' : 'green'};">
+    ${nac80Matches.length > 0 
+      ? "⚠️ <strong>NAC-80 Ingredients Found:</strong> " + nac80Matches.join(", ")
+      : "✅ No NAC-80 ingredients found."}
+  </div>
+  <div style="color: ${fragrance.length > 0 ? 'red' : 'green'};">
+    ${fragrance.length > 0 
+      ? "⚠️ <strong>Fragrance Ingredients Found:</strong> " + fragrance.join(", ")
+      : "✅ No fragrance ingredients found."}
+  </div>
+  <div style="color: ${adjacent.length > 0 ? 'red' : 'green'};">
+    ${adjacent.length > 0 
+      ? "⚠️ <strong>Adjacent Ingredients Found:</strong> " + adjacent.join(", ")
+      : "✅ No adjacent ingredients found."}
+  </div>
+`;
+
+    
 
     back.appendChild(ingredientsText);
     back.appendChild(summary);
@@ -138,15 +162,29 @@ function checkIngredients() {
   const results = document.getElementById('ingredientResults');
   results.innerHTML = '';
 
-  function formatResult(title, list, color) {
-    if (list.length > 0) {
-      return `<p style="color: ${color};"><strong>${title}:</strong> ${list.join(", ")}</p>`;
-    } else {
-      return `<p style="color: green;">✅ No ${title.toLowerCase()} found.</p>`;
-    }
-  }
+    results.innerHTML += formatResult("NAC-80 Ingredients Found", nac80Matches);
+  results.innerHTML += formatResult("Fragrance Ingredients Found", fragrance);
+  results.innerHTML += formatResult("Adjacent Ingredients Found", adjacent);
+} // <-- close checkIngredients() here ✅
 
-  results.innerHTML += formatResult("NAC-80 ingredients found", nac80Matches, "red");
-  results.innerHTML += formatResult("Fragrance ingredients found", fragrance, "orange");
-  results.innerHTML += formatResult("Adjacent ingredients found", adjacent, "#e67e22");
+
+
+
+  
+function formatResult(title, list) {
+  const titleKey = title.toLowerCase();
+  const isAdjacent = titleKey.includes("adjacent");
+  const isFragrance = titleKey.includes("fragrance");
+
+  if (list.length > 0) {
+    const color = isAdjacent ? "#e67e22" : "red";
+    return `<p style="color: ${color};">⚠️ <strong>${title}:</strong> ${list.join(", ")}</p>`;
+  } else {
+    const label = titleKey.includes("nac-80") ? "No NAC-80" :
+                  isFragrance ? "No fragrance" :
+                  "No adjacent";
+    return `<p style="color: green;">✅ ${label} found.</p>`;
+  }
 }
+  
+
