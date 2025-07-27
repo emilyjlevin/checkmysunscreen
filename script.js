@@ -68,7 +68,14 @@ const allProducts = [
   "name": "Neutrogena Beach Defense Oxybenzone-Free SPF 70",
   "image": "neutrogena_beachdefense_oxybenzonefree_spf70.png",
   "ingredients": "Active: Avobenzone 3%, Homosalate 15%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Styrene/Acrylates Copolymer, Potassium Cetyl Phosphate, Benzyl Alcohol, Silica, Glyceryl Stearate, PEG-100 Stearate, Dimethicone, Caprylyl Glycol, Synthetic Beeswax, Ethylhexylglycerin, Acrylates/C12-22 Alkyl Methacrylate Copolymer, Behenyl Alcohol, Fragrance, Xanthan Gum, Chlorphenesin, Dimethicone/PEG-10/15 Crosspolymer, Hydrolyzed Jojoba Esters, Disodium EDTA, Sodium Polyacrylate, Ethylhexyl Stearate, BHT, Jojoba Esters, Trideceth-6"
+},
+  {
+  "brand": "neutrogena",
+  "name": "Neutrogena Sport Face Lotion SPF 70",
+  "image": "neutrogena_sport_face_lotion_spf70.png",
+  "ingredients": "Active: Avobenzone 3%, Homosalate 15%, Octisalate 5%, Octocrylene 10%. Inactive: Water, Butyloctyl Salicylate, Styrene/Acrylates Copolymer, Silica, Dimethicone, Potassium Cetyl Phosphate, Beeswax, Benzyl Alcohol, Caprylyl Methicone, Glyceryl Stearate, PEG-100 Stearate, Cetyl Dimethicone, Caprylyl Glycol, Ethylhexylglycerin, Behenyl Alcohol, Hydrolyzed Jojoba Esters, Acrylates/Dimethicone Copolymer, Xanthan Gum, Chlorphenesin, Dimethicone/PEG-10/15 Crosspolymer, Sodium Polyacrylate, Disodium EDTA, Ethylhexyl Stearate, Tocopheryl Acetate, Bisabolol, BHT, Jojoba Esters, Trideceth-6"
 }
+
 ];
 
 function format(str) {
