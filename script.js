@@ -40,10 +40,10 @@ const allProducts = [
     ingredients: "Active: Octinoxate 7%, Octisalate 3%. Inactive: Water, Titanium Dioxide, Isopropyl Isostearate, Cyclopentasiloxane, Dimethicone, Butylene Glycol, Glyceryl Stearate, Cetyl Alcohol, Cetearyl Alcohol, PEG-75 Stearate, Lauroyl Lysine, Tocopheryl Acetate, Olea Europaea (Olive) Fruit Extract, BHT, Erythorbic Acid, Bisabolol, Retinyl Palmitate, Retinol, Arginine, Silica, Polysorbate 20, PEG-100 Stearate, Isostearyl Palmitate, Sclerotium Gum, Polysilicone-11, Ammonium Polyacryloyldimethyl Taurate, Ceteth-20, Steareth-20, Tetrasodium EDTA, Iron Oxides, Methylparaben, Propylaparaben, Ethylparaben, Phenoxyethanol, Fragrance"
   },
   {
-    brand: "neutrogena",
-    name: "Neutrogena Radiant Tinted Face Moisturizer Sheer Tan SPF 30",
-    image: "neutrogena-radiant-tinted-face-sheertan-spf30.jpg",
-    ingredients: "Active: Homosalate 5%, Octinoxate 7.5%, Octisalate 5%, Oxybenzone 2%, Titanium Dioxide 2.9%. Inactive: Water, Phenyl Trimethicone, Cetyl Dimethicone, Butylene Glycol, Silica, Cetearyl Alcohol, Barium Sulfate, PEG-100 Stearate, Glyceryl Stearate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Phenoxyethanol, Squalane, Bisabolol, Caprylyl Glycol, Magnesium Aluminum Silicate, Dipotassium Glycyrrhizate, Polysorbate 20, Polymethyl Methacrylate, Cetyl Hydroxyethylcellulose, Polysorbate 60, Xanthan Gum, Tetrasodium EDTA, Sorbic Acid, PEG-12 Dimethicone, Tocopheryl Acetate, Pantothenic Acid, Retinyl Palmitate, Ascorbic Acid, Iron Oxides, Mica, Titanium Dioxide"
+  brand: "neutrogena",
+  name: "Neutrogena Radiant Tinted Face Moisturizer Sheer Tan SPF 30",
+  image: "neutrogena-radiant-tinted-face-sheertan-spf30.jpg",
+  ingredients: "Active: Homosalate 5%, Octinoxate 7.5%, Octisalate 5%, Oxybenzone 2%, Titanium Dioxide 2.9%. Inactive: Water, Phenyl Trimethicone, Cetyl Dimethicone, Butylene Glycol, Silica, Cetearyl Alcohol, Barium Sulfate, PEG-100 Stearate, Glyceryl Stearate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Phenoxyethanol, Squalane, Bisabolol, Caprylyl Glycol, Magnesium Aluminum Silicate, Dipotassium Glycyrrhizate, Polysorbate 20, Polymethyl Methacrylate, Cetyl Hydroxyethylcellulose, Polysorbate 60, Xanthan Gum, Tetrasodium EDTA, Sorbic Acid, PEG-12 Dimethicone, Tocopheryl Acetate, Pantothenic Acid, Retinyl Palmitate, Ascorbic Acid, Iron Oxides, Mica, Titanium Dioxide"
   }
 ];
 
@@ -54,17 +54,31 @@ function format(str) {
 function checkBrand() {
   const input = document.getElementById("brandInput").value.toLowerCase();
   const results = document.getElementById("brandResults");
-  results.innerHTML = "";
+  results.innerHTML = '';
 
   const filtered = allProducts.filter(p => p.brand.toLowerCase() === input);
-
   filtered.forEach(product => {
-    const ingredients = product.ingredients.split(",").map(format);
+    const container = document.createElement("div");
+    container.className = "product";
+
+    const img = document.createElement("img");
+    img.src = "images/" + product.image;
+    img.alt = "";
+
+    const overlay = document.createElement("div");
+    overlay.className = "overlay";
+
+    const ingredientsText = document.createElement("div");
+    ingredientsText.textContent = product.ingredients;
+
+    // 👇 Run ingredient analysis
+    const ingredients = product.ingredients.split(',').map(format);
     const nac80Matches = [];
     const fragrance = [];
     const adjacent = [];
 
     const mixTerms = ["paraben", "rubber", "mercapto", "carba", "thiourea", "lactone", "caine", "compositae", "textile"];
+
     ingredients.forEach(ing => {
       if (nac80List.includes(ing)) nac80Matches.push(ing);
       else if (/(fragrance|parfum|perfume|parfume|perfum)/.test(ing)) fragrance.push(ing);
@@ -73,70 +87,67 @@ function checkBrand() {
       }
     });
 
-    const container = document.createElement("div");
-    container.className = "flip-card";
-    container.style.width = "200px";
-    container.style.height = "300px";
-    container.style.perspective = "1000px";
-    container.style.display = "inline-block";
-    container.style.margin = "10px";
-
-    const inner = document.createElement("div");
-    inner.className = "flip-card-inner";
-    inner.style.width = "100%";
-    inner.style.height = "100%";
-    inner.style.position = "relative";
-    inner.style.transition = "transform 0.6s";
-    inner.style.transformStyle = "preserve-3d";
-
-    inner.onmouseenter = () => (inner.style.transform = "rotateY(180deg)");
-    inner.onmouseleave = () => (inner.style.transform = "rotateY(0deg)");
-
-    const front = document.createElement("div");
-    front.className = "flip-card-front";
-    front.style.position = "absolute";
-    front.style.width = "100%";
-    front.style.height = "100%";
-    front.style.backfaceVisibility = "hidden";
-
-    const img = document.createElement("img");
-    img.src = "images/" + product.image;
-    img.alt = product.name;
-    img.style.width = "100%";
-    img.style.height = "100%";
-    img.style.objectFit = "cover";
-    front.appendChild(img);
-
-    const back = document.createElement("div");
-    back.className = "flip-card-back";
-    back.style.position = "absolute";
-    back.style.width = "100%";
-    back.style.height = "100%";
-    back.style.backfaceVisibility = "hidden";
-    back.style.background = "white";
-    back.style.fontSize = "10px";
-    back.style.overflowY = "auto";
-    back.style.transform = "rotateY(180deg)";
-    back.style.padding = "10px";
-    back.style.boxSizing = "border-box";
-
-    const ingredientsText = document.createElement("div");
-    ingredientsText.textContent = product.ingredients;
-    ingredientsText.style.marginBottom = "8px";
-
     const summary = document.createElement("div");
+    summary.style.fontSize = "0.6em";
+    summary.style.marginTop = "8px";
     summary.innerHTML = `
-      <div style="color: red;">${nac80Matches.length ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
-      <div style="color: orange;">${fragrance.length ? "Fragrance: " + fragrance.join(", ") : "✅ No fragrance"}</div>
-      <div style="color: #e67e22;">${adjacent.length ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
+      <div style="color: red;">${nac80Matches.length > 0 ? "NAC-80: " + nac80Matches.join(", ") : "✅ No NAC-80"}</div>
+      <div style="color: orange;">${fragrance.length > 0 ? "Fragrance: " + fragrance.join(", ") : "✅ No fragrance"}</div>
+      <div style="color: #e67e22;">${adjacent.length > 0 ? "Adjacent: " + adjacent.join(", ") : "✅ No adjacent"}</div>
     `;
 
-    back.appendChild(ingredientsText);
-    back.appendChild(summary);
 
-    inner.appendChild(front);
-    inner.appendChild(back);
-    container.appendChild(inner);
+    const overlayContent = document.createElement("div");
+    overlayContent.style.display = "flex";
+    overlayContent.style.flexDirection = "column";
+    overlayContent.style.alignItems = "flex-start";
+    overlayContent.style.overflowY = "auto";
+    overlayContent.appendChild(ingredientsText);
+    overlayContent.appendChild(summary);
+
+    overlay.appendChild(overlayContent);
+
+    
+    container.appendChild(img);
+    container.appendChild(overlay);
+
+    container.onclick = () => {
+      container.classList.toggle("clicked");
+    };
+
     results.appendChild(container);
   });
+}
+
+function checkIngredients() {
+  const input = document.getElementById('ingredientInput').value;
+  const ingredients = input.split(',').map(format);
+  const nac80Matches = [];
+  const fragrance = [];
+  const adjacent = [];
+
+  const mixTerms = ["paraben", "rubber", "mercapto", "carba", "thiourea", "lactone", "caine", "compositae", "textile"];
+
+  ingredients.forEach(ing => {
+    if (nac80List.includes(ing)) nac80Matches.push(ing);
+    else if (/(fragrance|parfum|perfume|parfume|perfum)/.test(ing)) fragrance.push(ing);
+    else if (/acrylate|tocopheryl acetate|limonene|linalool|cinnamal/.test(ing) || mixTerms.some(term => ing.includes(term))) {
+      adjacent.push(ing);
+    }
+  });
+
+  const results = document.getElementById('ingredientResults');
+  results.innerHTML = '';
+
+  function formatResult(title, list, color) {
+    if (list.length > 0) {
+      return `<p style="color: ${color};"><strong>${title}:</strong> ${list.join(", ")}</p>`;
+    } else {
+      return `<p style="color: green;">✅ No ${title.toLowerCase()} found.</p>`;
+    }
+  }
+
+  results.innerHTML += formatResult("NAC-80 ingredients found", nac80Matches, "red");
+  results.innerHTML += formatResult("Fragrance ingredients found", fragrance, "orange");
+  results.innerHTML += formatResult("Adjacent ingredients found", adjacent, "#e67e22");
 }
