@@ -73,7 +73,7 @@
       width: 135px;   /* 120 */
       height: 200px;  /* 180 */
       border-radius: 8px;
-      overflow: hidden;
+      overflow: visible;  /* hidden */
       cursor: pointer;
       perspective: 1200px;
     }
@@ -114,11 +114,11 @@
     font-size: 8px;   /* 0.6em*/
     /* line-height: 1.2; */
     padding: 8px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;   /* center */
-    align-items: center;
+    overflow: visible;  /* overflow-y: auto; */
+    display: block;   /* flex */
+   /* flex-direction: column; */
+   /* justify-content: flex-start; */  /* center */ 
+    /* align-items: center; */
     text-align: center;
     }
 
