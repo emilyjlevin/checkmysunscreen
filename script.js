@@ -174,7 +174,7 @@ function checkBrand() {
     
     container.appendChild(img);
     container.appendChild(overlay);
-   */ ✅ end FLIP CARD FUNCTIONALITY
+   */ //✅ end FLIP CARD FUNCTIONALITY
     
 
     
