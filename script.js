@@ -104,14 +104,22 @@ const allProducts = [
   name: "EltaMD UV Clear Tinted Face Broad-Spectrum SPF 46",
   image: "eltamd_UVclear_tinted_face_broadspectrum_spf46.png",
   ingredients: "Active: Zinc Oxide 9.0%, Octinoxate 7.5%. Inactive: Water, Cyclopentasiloxane, Niacinamide, Octyldodecyl Neopentanoate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Butylene Glycol, Phenoxyethanol, Polyisobutene, Triethoxycaprylylsilane, Iron Oxides, Isopropyl Palmitate, Ethylhexyl Stearate, Tocopheryl Acetate, PEG-7 Trimethylolpropane Coconut Ether, Oleth-3 Phosphate, Iodopropynyl Butylcarbamate, Lactic Acid, Sodium Hyaluronate, Phosphoric Acid"
-}
+},
   {
   brand: "eltamd",
   name: "EltaMD UV Physical Tinted Broad-Spectrum SPF 41",
   image: "eltamd_UVphysical_tinted_broadspectrum_spf41.png",
   ingredients: "Active: Zinc Oxide 9.0%, Titanium Dioxide 7.0%. Inactive: Water, Isopropyl Palmitate, Ethylhexyl Stearate, Octyldodecyl Neopentanoate, Alumina, Polyacrylate-13, Phenoxyethanol, Hydrogen Dimethicone, Polyisobutene, Hydrogenated Polyisobutene, Triethoxycaprylylsilane, Oleth-3 Phosphate, Tocopheryl Acetate, Bisabolol, Tocopherol, Carnosine, Ethylhexylglycerin, Sorbitan Isostearate, Polysorbate 20, Zingiber Officinale (Ginger) Root Extract, Iron Oxides"
 },
+  {
+  brand: "larocheposay",
+  name: "La Roche-Posay Anthelios Mineral Tinted Face SPF 50 (Universal Tint)",
+  image: "larocheposay_anthelios_mineral_tinted_face_universaltint_spf50.png",
+  ingredients: "Active: Titanium Dioxide 11%. Inactive: Water, Isododecane, C12-15 Alkyl Benzoate, Dimethicone, Undecane, Triethylhexanoin, Isohexadecane, Styrene/Acrylates Copolymer, Nylon-12, Caprylyl Methicone, Butyloctyl Salicylate, Phenethyl Benzoate, Silica, Tridecane, Dicaprylyl Carbonate, Dicaprylyl Ether, Talc, Dimethicone/PEG-10/15 Crosspolymer, Aluminum Stearate, Pentylene Glycol, PEG-9 Polydimethylsiloxyethyl Dimethicone, Iron Oxides, Alumina, Polyhydroxystearic Acid, Phenoxyethanol, Magnesium Sulfate, Propylene Glycol, Caprylyl Glycol, Aluminum Hydroxide, PEG-8 Laurate, Stearic Acid, Disteardimonium Hectorite, Diethylhexyl Syringylidenemalonate, Tocopherol, Propylene Carbonate, Cassia Alata Leaf Extract, Maltodextrin, Benzoic Acid, Disodium Stearoyl Glutamate"
+}
 ];
+
+
 
 function format(str) {
   return str.trim().toLowerCase();
