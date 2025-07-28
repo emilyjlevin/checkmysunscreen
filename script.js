@@ -99,6 +99,12 @@ const allProducts = [
   image: "eltamd_UVclear_tinted_face_broadspectrum_spf46.png",
   ingredients: "Active: Zinc Oxide 9.0%, Octinoxate 7.5%. Inactive: Water, Cyclopentasiloxane, Niacinamide, Octyldodecyl Neopentanoate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Butylene Glycol, Phenoxyethanol, Polyisobutene, Triethoxycaprylylsilane, Iron Oxides, Isopropyl Palmitate, Ethylhexyl Stearate, Tocopheryl Acetate, PEG-7 Trimethylolpropane Coconut Ether, Oleth-3 Phosphate, Iodopropynyl Butylcarbamate, Lactic Acid, Sodium Hyaluronate, Phosphoric Acid"
 }
+  {
+  brand: "eltamd",
+  name: "EltaMD UV Physical Tinted Broad-Spectrum SPF 41",
+  image: "eltamd_UVphysical_tinted_broadspectrum_spf41.png",
+  ingredients: "Active: Zinc Oxide 9.0%, Titanium Dioxide 7.0%. Inactive: Water, Isopropyl Palmitate, Ethylhexyl Stearate, Octyldodecyl Neopentanoate, Alumina, Polyacrylate-13, Phenoxyethanol, Hydrogen Dimethicone, Polyisobutene, Hydrogenated Polyisobutene, Triethoxycaprylylsilane, Oleth-3 Phosphate, Tocopheryl Acetate, Bisabolol, Tocopherol, Carnosine, Ethylhexylglycerin, Sorbitan Isostearate, Polysorbate 20, Zingiber Officinale (Ginger) Root Extract, Iron Oxides"
+},
 ];
 
 function format(str) {
