@@ -110,7 +110,10 @@ function checkBrand() {
   const results = document.getElementById("brandResults");
   results.innerHTML = '';
 
-  const filtered = allProducts.filter(p => p.brand.toLowerCase() === input);
+  const filtered = input === "" 
+  ? allProducts 
+  : allProducts.filter(p => p.brand.toLowerCase() === input);
+  
   console.log("Filtered products:", filtered);
 
   filtered.forEach(product => {
@@ -197,6 +200,14 @@ function checkBrand() {
 
   });
 }
+
+
+document.getElementById("brandInput").addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    checkBrand();
+  }
+});
+
 
 function checkIngredients() {
   const input = document.getElementById('ingredientInput').value;
