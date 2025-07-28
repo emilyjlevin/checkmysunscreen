@@ -88,6 +88,12 @@ const allProducts = [
   ingredients: "Active: Homosalate 6%, Octisalate 5%, Octocrylene 5%, Zinc Oxide 7%. Inactive: Water, Glycerin, Coco-Caprylate/Caprate, Propanediol, Butyloctyl Salicylate, C12-22 Alkyl Acrylate/Hydroxyethylacrylate Copolymer, Niacinamide, Ethylhexyl Methoxycrylene, Oryza Sativa (Rice) Bran Wax, Steareth-20, Ceramide NP, Ceramide AP, Ceramide EOP, Sorbitan Isostearate, Carbomer, Triethoxycaprylylsilane, Cetearyl Alcohol, Behentrimonium Methosulfate, Triethyl Citrate, Sodium Lauroyl Lactylate, Sodium Hyaluronate, Cholesterol, Chlorphenesin, Hydroxyacetophenone, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Citric Acid, Caprylic/Capric Triglyceride, Caprylyl Glycol, Trisodium Ethylenediamine Disuccinate, Diethylhexyl Syringylidenemalonate, Xanthan Gum, Phytosphingosine, Polyhydroxystearic Acid, Polysorbate 60, Benzoic Acid"
 },
   {
+  brand: "cerave",
+  name: "CeraVe Mineral Sunscreen Stick with Ceramides & Hyaluronic Acid SPF 50",
+  image: "cerave_mineral_stick_ceramidesha_spf50.png",
+  ingredients: "Active: Titanium Dioxide 6%, Zinc Oxide 4.7%. Inactive: C12-15 Alkyl Benzoate, Butyloctyl Salicylate, Neopentyl Glycol Diethylhexanoate, Paraffin, Euphorbia Cerifera (Candelilla) Wax, Ozokerite, Dimethicone, Beeswax, Polyethylene, Cetyl Alcohol, Ceramide 3, Ceramide 6-II, Ceramide 1, Cholesterol, Phytosphyingosine, Sodium Hyaluronate, Polyhydrostearic Acid, Aluminum Hydroxide, Stearic Acid, BHT, Carbomer, Triethoxycaprylylsilane, Isostearic Acid, Sodium Lauroyl Lactylate, Xanthan Gum"
+},
+  {
   "brand": "eltamd",
   "name": "EltaMD UV Daily Tinted Face SPF 40",
   "image": "eltamd_UVDaily_tinted_face_spf40.png",
