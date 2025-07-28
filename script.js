@@ -82,6 +82,12 @@ const allProducts = [
   "ingredients": "Active: Titanium Dioxide 5.5%, Zinc Oxide 10%. Inactive: Water, C12-15 Alkyl Benzoate, Isohexadecane, Isononyl Isononanoate, Dicaprylyl Ether, PEG-30 Dipolyhydroxystearate, Triethylhexanoin, Polyglyceryl-4 Isostearate, Dicaprylyl Carbonate, Ethylene/Acrylic Acid Copolymer, Triethanolamine, Silica, Poly C10-30 Alkyl Acrylate, Stearic Acid, Ceramide NP, Ceramide AP, Ceramide EOP, Carbomer, Niacinamide, Cetearyl Alcohol, Triethoxycaprylylsilane, Behentrimonium Methosulfate, Sodium Chloride, Salicylic Acid, Sodium Hyaluronate, Sodium Lauroyl Lactylate, Cholesterol, Aluminum Stearate, Alumina, Aluminum Hydroxide, Iron Oxides, Phenoxyethanol, P-Anisic Acid, Chlorphenesin, Tocopherol, Disodium EDTA, Disodium Stearoyl Glutamate, Propylene Carbonate, Citric Acid, Caprylyl Glycol, Capryloyl Salicylic Acid, Caprylic/Capric Triglyceride, Diethylhexyl Syringylidenemalonate, Disteardimonium Hectorite, Xanthan Gum, Phytosphingosine, Polyhydroxystearic Acid, Ethylhexylglycerin"
 },
   {
+  brand: "cerave",
+  name: "CeraVe Hydrating Sheer Broad-Spectrum Face/Body SPF 30",
+  image: "cerave_hydrating_sheer_broadspectrum_facebody_spf30.png",
+  ingredients: "Active: Homosalate 6%, Octisalate 5%, Octocrylene 5%, Zinc Oxide 7%. Inactive: Water, Glycerin, Coco-Caprylate/Caprate, Propanediol, Butyloctyl Salicylate, C12-22 Alkyl Acrylate/Hydroxyethylacrylate Copolymer, Niacinamide, Ethylhexyl Methoxycrylene, Oryza Sativa (Rice) Bran Wax, Steareth-20, Ceramide NP, Ceramide AP, Ceramide EOP, Sorbitan Isostearate, Carbomer, Triethoxycaprylylsilane, Cetearyl Alcohol, Behentrimonium Methosulfate, Triethyl Citrate, Sodium Lauroyl Lactylate, Sodium Hyaluronate, Cholesterol, Chlorphenesin, Hydroxyacetophenone, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Citric Acid, Caprylic/Capric Triglyceride, Caprylyl Glycol, Trisodium Ethylenediamine Disuccinate, Diethylhexyl Syringylidenemalonate, Xanthan Gum, Phytosphingosine, Polyhydroxystearic Acid, Polysorbate 60, Benzoic Acid"
+},
+  {
   "brand": "eltamd",
   "name": "EltaMD UV Daily Tinted Face SPF 40",
   "image": "eltamd_UVDaily_tinted_face_spf40.png",
