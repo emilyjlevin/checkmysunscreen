@@ -86,6 +86,12 @@ const allProducts = [
   "name": "EltaMD UV Daily Tinted Face SPF 40",
   "image": "eltamd_UVDaily_tinted_face_spf40.png",
   "ingredients": "Active: Octinoxate 7.5%, Zinc Oxide 9.0%. Inactive: Water, Petrolatum, Isopropyl Palmitate, Dimethicone, Cetearyl Alcohol, Oleth-3 Phosphate, Phenoxyethanol, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Polyisobutene, Cetearyl Glucoside, Octyldodecyl Neopentanoate, Ethylhexyl Stearate, Polyether-1, Butylene Glycol, PEG-7 Trimethylolpropane Coconut Ether, Sodium Hyaluronate, Iodopropynyl Butylcarbamate, Citric Acid, Tocopheryl Acetate, Triethoxycaprylylsilane, Iron Oxides"
+},
+  {
+  brand: "eltamd",
+  name: "EltaMD UV Clear Tinted Face Broad-Spectrum SPF 46",
+  image: "eltamd_UVclear_tinted_face_broadspectrum_spf46.png",
+  ingredients: "Active: Zinc Oxide 9.0%, Octinoxate 7.5%. Inactive: Water, Cyclopentasiloxane, Niacinamide, Octyldodecyl Neopentanoate, Hydroxyethyl Acrylate/Sodium Acryloyldimethyl Taurate Copolymer, Butylene Glycol, Phenoxyethanol, Polyisobutene, Triethoxycaprylylsilane, Iron Oxides, Isopropyl Palmitate, Ethylhexyl Stearate, Tocopheryl Acetate, PEG-7 Trimethylolpropane Coconut Ether, Oleth-3 Phosphate, Iodopropynyl Butylcarbamate, Lactic Acid, Sodium Hyaluronate, Phosphoric Acid"
 }
 ];
 
